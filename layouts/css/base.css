@@ -1,0 +1,61 @@
+html, body {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+.canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+}
+
+/* Comment out when not debugging */
+.debug {
+    box-sizing: border-box;
+    border: 5px solid black;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #777777;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.canvas div {
+    position: absolute;
+}
+
+.opaque {
+    background-color: #000;
+}
+
+.left {
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.screen {
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 30px 5px #000;
+}
+
+div.bordered {
+    border: 2px solid white;
+}
