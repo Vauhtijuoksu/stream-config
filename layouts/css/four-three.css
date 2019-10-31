@@ -1,0 +1,15 @@
+.left {
+    width: 560px;
+    bottom: 60px;
+}
+
+.bottom {
+    height: 60px;
+    left: 0;
+    right: 0;
+}
+
+.screen {
+    width: 1360px;
+    height: 1020px;
+}
