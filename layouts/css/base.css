@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'electricboots';
+    src:  url('https://vauhtijuoksu.otit.fi/static/css/ELECTRICBOOTS.ttf') format('truetype');
+}
+
 html, body {
     background-color: transparent;
     margin: 0;
     padding: 0;
+    font-family: 'electricboots';
     color: whitesmoke;
 }
 
@@ -27,7 +33,9 @@ div {
     vertical-align: middle;
 }
 
-#canvas div {
+#canvas>div,
+.left>div,
+.bottom>div {
     position: absolute;
 }
 
