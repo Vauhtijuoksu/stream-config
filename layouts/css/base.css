@@ -39,15 +39,22 @@ div {
     position: absolute;
 }
 
-.opaque {
-    background-color: #000;
-}
-
 .left {
     left: 0;
     top: 0;
     display: flex;
     flex-direction: column;
+}
+
+#sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sponsors>img {
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .bottom {
