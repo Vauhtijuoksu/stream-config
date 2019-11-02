@@ -29,6 +29,7 @@ function updateStatus() {
         if (xhr.readyState == 4) {
             var info = JSON.parse(xhr.responseText);
             updateInfo(info);
+            setTimeout(updateStatus, 2000);
         }
     }
     xhr.send();
