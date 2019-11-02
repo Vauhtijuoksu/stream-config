@@ -46,5 +46,8 @@ function updateInfo(info) {
     document.getElementById("estimate").innerHTML = "arvio: " + game.duration;
     //document.getElementById("console").innerHTML = cap(info.console);
     //document.getElementById("year").innerHTML = info.year;
-    document.getElementById("deathcount").innerHTML = info.death1;
+    var deathcount = document.getElementById("deathcount");
+    if (deathcount && info.death1 !== null) {
+        deathcount.innerHTML = info.death1;
+    }
 }
