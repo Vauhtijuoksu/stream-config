@@ -1,12 +1,31 @@
+#canvas {
+    background-image: url('../img/layout43.png');
+}
+
 .left {
     width: 560px;
     bottom: 60px;
 }
 
-.bottom {
-    height: 60px;
-    left: 0;
-    right: 0;
+#sponsors {
+    top: 120px;
+    left: 14px;
+    right: 14px;
+    height: 290px;
+}
+
+#info {
+    top: 430px;
+    left: 40px;
+    right: 14px;
+    height: 132px;
+}
+
+#player {
+    bottom: 263px;
+    height: 40px;
+    left: 100px;
+    right: 103px;
 }
 
 .screen {
