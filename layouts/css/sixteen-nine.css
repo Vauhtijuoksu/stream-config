@@ -1,3 +1,7 @@
+#canvas {
+    background-image: url('../img/layout169.png');
+}
+
 /* Left side bar */
 .left {
     width: 400px;
@@ -5,10 +9,10 @@
 }
 
 #sponsors {
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 350px;
+    top: 230px;
+    left: 14px;
+    right: 14px;
+    height: 330px;
 }
 
 #webcam {
@@ -20,24 +24,24 @@
 
 .bottom {
     bottom: 60px;
-    height: 165px;
+    height: 150px;
     left: 400px;
     right: 0;
 }
 
 #info {
     display: flex;
-    left: 0;
+    left: 540px;
     top: 0;
-    bottom: 0;
-    right: 50%;
+    bottom: 18px;
+    width: 580px;
 }
 
-#timer {
-    left: 50%;
+#counter {
+    left: 1200;
     top: 0;
-    bottom: 0;
-    right: 0;
+    right: 14px;
+    bottom: 18px;
 }
 
 .screen {
