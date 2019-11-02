@@ -2,13 +2,26 @@
 <head>
   <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/four-three.css">
+  <script src="js/data.js"></script>
+
 </head>
-<body>
+<body onload="getGames();">
   <div id="canvas">
     <div class="screen"></div>
     <div class="left">
       <div id="sponsors" class="debug">Sponsors</div>
-      <div id="info" class="debug">info</div>
+      <div id="info" class="debug">
+          <div>
+              <div id="game"></div>
+              <div id="category"></div>
+            </div>
+            <div>
+              <div>
+                <span id="console">Ps1</<span>, <span id="year">1969</span>
+              </div>
+              <div id="estimate">arvio: </div>
+            </div>
+      </div>
       <div id="player" class="debug">Pellaaja</div>
     </div>
     <div class="donations debug"></div>

@@ -16,9 +16,7 @@
 }
 
 #player {
-    text-align: center;
     font-size: 32pt;
-    line-height: 1;
     bottom: 10px;
     left: 60px;
     right: 60px;
@@ -34,13 +32,15 @@
 
 /* Info box */
 #info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     left: 590px;
     top: 0;
     bottom: 18px;
     width: 530px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
     font-size: 18pt;
     padding-bottom: 5px;
 }
