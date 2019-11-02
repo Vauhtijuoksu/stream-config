@@ -16,6 +16,9 @@
 }
 
 #player {
+    text-align: center;
+    font-size: 32pt;
+    line-height: 0.8;
     bottom: 10px;
     left: 60px;
     right: 60px;
@@ -29,12 +32,30 @@
     right: 0;
 }
 
+/* Info box */
 #info {
     display: flex;
-    left: 540px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    left: 590px;
     top: 0;
     bottom: 18px;
-    width: 580px;
+    width: 530px;
+    font-size: 18pt;
+    padding-bottom: 5px;
+}
+
+/* Rows within info box */
+#info>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+#game {
+    font-size: 22pt;
 }
 
 #counter {

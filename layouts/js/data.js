@@ -15,6 +15,13 @@ function getGames() {
     xhr.send();
 }
 
+function cap(s) {
+    if (s == null || s.length < 2) {
+        return s;
+    }
+    return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+}
+
 function updateStatus() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", info_url);
@@ -32,11 +39,11 @@ function updateInfo(info) {
         return;
     }
     game = games[info.game];
-    document.getElementById("player").innerHTML = game.player;
-    document.getElementById("game").innerHTML = game.game;
-    document.getElementById("category").innerHTML = game.category;
-    document.getElementById("estimate").innerHTML = game.duration;
-    //document.getElementById("console").innerHTML = info.console;
+    document.getElementById("player").innerHTML = cap(game.player);
+    document.getElementById("game").innerHTML = cap(game.game);
+    document.getElementById("category").innerHTML = cap(game.category);
+    document.getElementById("estimate").innerHTML = "arvio: " + game.duration;
+    //document.getElementById("console").innerHTML = cap(info.console);
     //document.getElementById("year").innerHTML = info.year;
     document.getElementById("deathcount").innerHTML = info.death1;
 }
