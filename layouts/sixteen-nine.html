@@ -3,12 +3,14 @@
   <link rel="stylesheet" type="text/css" href="css/base.css">
   <link rel="stylesheet" type="text/css" href="css/sixteen-nine.css">
   <script src="js/data.js"></script>
+  <script src="js/carousel.js"></script>
 </head>
-<body onload="getGames();">
+<body onload="getGames(); initCarousel();">
   <div id="canvas">
     <div class="screen"></div>
     <div class="left">
-      <div id="sponsors" class="debug">Sponsors</div>
+      <div id="sponsors">
+      </div>
       <div id="player">P1</div>
     </div>
     <div class="bottom">
