@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'electricboots';
-    src:  url('https://vauhtijuoksu.otit.fi/static/css/ELECTRICBOOTS.ttf') format('truetype');
+    src:  url('./ELECTRICBOOTS.ttf') format('truetype');
 }
 
 html, body {
