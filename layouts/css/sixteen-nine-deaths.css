@@ -1,0 +1,18 @@
+#canvas {
+    background-image: url('../img/layout169deathcounter.png');
+}
+
+/* Info box */
+#info {
+    left: 590px;
+    top: 0;
+    bottom: 18px;
+    width: 530px;
+}
+
+#counter {
+    left: 1200;
+    top: 0;
+    right: 14px;
+    bottom: 18px;
+}

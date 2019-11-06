@@ -75,3 +75,10 @@ div {
     justify-content: center;
     padding-bottom: 10px;
 }
+
+.donations {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+}

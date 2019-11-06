@@ -32,10 +32,10 @@
 
 /* Info box */
 #info {
-    left: 590px;
+    left: 800px;
     top: 0;
     bottom: 18px;
-    width: 530px;
+    width: 680px;
 
     display: flex;
     flex-direction: column;
@@ -58,21 +58,8 @@
     font-size: 22pt;
 }
 
-#counter {
-    left: 1200;
-    top: 0;
-    right: 14px;
-    bottom: 18px;
-}
 
 .screen {
     width: 1520px;
     height: 855px;
-}
-
-.donations {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
 }
