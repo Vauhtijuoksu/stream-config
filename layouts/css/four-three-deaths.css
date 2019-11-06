@@ -1,0 +1,13 @@
+#canvas {
+    background-image: url('../img/layout43deathcounter.png');
+}
+
+
+#counter {
+    left: 44px;
+    top: 580px;
+    width: 110px;
+    bottom: 320px;
+
+    font-size: 40pt;
+}
