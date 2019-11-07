@@ -1,5 +1,5 @@
-let games_url = "https://cors-anywhere.herokuapp.com/https://vauhtijuoksu.otit.fi/api/games"
-let info_url = "https://cors-anywhere.herokuapp.com/https://vauhtijuoksu.otit.fi/api/status";
+let games_url = "https://vauhtijuoksu.otit.fi/api/games"
+let info_url = "https://vauhtijuoksu.otit.fi/api/status";
 
 let games = null;
 
@@ -22,6 +22,31 @@ function cap(s) {
     return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
 }
 
+function formatTime(dateStr) {
+    var date = new Date(dateStr);
+    return "Klo " + date.toLocaleTimeString("se-SE", { timeStyle: "short"});
+}
+
+function formatEstimate(estimate) {
+    return "Arvio " + estimate;
+}
+
+function updateField(elementId, data, format) {
+    var element = document.getElementById(elementId);
+    if (element) {
+        if (data) {
+            if (format) {
+                data = format(data);
+            }
+            element.innerHTML = data;
+            element.style.display = "initial";
+        }
+        else {
+            element.style.display = "none";
+        }
+    }
+}
+
 function updateStatus() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", info_url);
@@ -40,14 +65,12 @@ function updateInfo(info) {
         return;
     }
     game = games[info.game];
-    document.getElementById("player").innerHTML = cap(game.player);
-    document.getElementById("game").innerHTML = cap(game.game);
-    document.getElementById("category").innerHTML = cap(game.category);
-    document.getElementById("estimate").innerHTML = "arvio: " + game.duration;
-    //document.getElementById("console").innerHTML = cap(info.console);
-    //document.getElementById("year").innerHTML = info.year;
-    var deathcount = document.getElementById("deathcount");
-    if (deathcount && info.death1 !== null) {
-        deathcount.innerHTML = info.death1;
-    }
+    updateField("player", game.player, cap);
+    updateField("game", game.game, cap);
+    updateField("category", game.category, cap);
+    updateField("estimate", game.duration, formatEstimate);
+    updateField("time", game.start, formatTime);
+    var consYear = [game.device, game.year].filter(p => p).join(", ")
+    updateField("console", consYear, cap);
+    updateField("deathcount", info.death1);
 }
