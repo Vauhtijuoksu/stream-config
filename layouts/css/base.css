@@ -1,7 +1,15 @@
+@font-face {
+    font-family: 'electricboots';
+    src:  url('./ELECTRICBOOTS.ttf') format('truetype');
+}
+
 html, body {
     background-color: transparent;
     margin: 0;
     padding: 0;
+    font-family: 'electricboots';
+    color: whitesmoke;
+    text-align: center;
 }
 
 div {
@@ -9,7 +17,7 @@ div {
     margin: 0;
 }
 
-.canvas {
+#canvas {
     position: fixed;
     left: 0;
     top: 0;
@@ -19,21 +27,16 @@ div {
 
 /* Comment out when not debugging */
 .debug {
-    box-sizing: border-box;
-    border: 5px solid black;
+    background-color: #ff000033;
     font-size: 16pt;
     font-weight: bold;
-    color: #777777;
-    text-align: center;
     vertical-align: middle;
 }
 
-.canvas div {
+#canvas>div,
+.left>div,
+.bottom>div {
     position: absolute;
-}
-
-.opaque {
-    background-color: #000;
 }
 
 .left {
@@ -41,6 +44,17 @@ div {
     top: 0;
     display: flex;
     flex-direction: column;
+}
+
+#sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sponsors>img {
+    max-width: 90%;
+    max-height: 75%;
 }
 
 .bottom {
@@ -52,10 +66,19 @@ div {
 .screen {
     top: 0;
     right: 0;
-    box-sizing: border-box;
-    box-shadow: inset 0px 0px 30px 5px #000;
 }
 
-div.bordered {
-    border: 2px solid white;
+#counter {
+    font-size: 48pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.donations {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
 }

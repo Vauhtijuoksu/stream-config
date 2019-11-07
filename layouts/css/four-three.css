@@ -1,12 +1,52 @@
+#canvas {
+    background-image: url('../img/layout43.png');
+}
+
 .left {
     width: 560px;
     bottom: 60px;
 }
 
-.bottom {
-    height: 60px;
-    left: 0;
-    right: 0;
+#sponsors {
+    top: 120px;
+    left: 14px;
+    right: 14px;
+    height: 290px;
+}
+
+#info {
+    top: 430px;
+    left: 80px;
+    right: 14px;
+    height: 132px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    font-size: 18pt;
+    padding-bottom: 5px;
+}
+
+/* Rows within info box */
+#info>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+#game {
+    font-size: 22pt;
+}
+
+#player {
+    font-size: 32pt;
+    bottom: 263px;
+    height: 50px;
+    left: 100px;
+    right: 103px;
 }
 
 .screen {

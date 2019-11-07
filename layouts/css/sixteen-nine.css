@@ -1,3 +1,7 @@
+#canvas {
+    background-image: url('../img/layout169.png');
+}
+
 /* Left side bar */
 .left {
     width: 400px;
@@ -5,49 +9,57 @@
 }
 
 #sponsors {
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 210px;
+    left: 14px;
+    right: 14px;
     height: 350px;
 }
 
-#webcam {
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 500px;
+#player {
+    font-size: 32pt;
+    bottom: 10px;
+    left: 60px;
+    right: 60px;
+    height: 40px;
 }
 
 .bottom {
     bottom: 60px;
-    height: 165px;
+    height: 150px;
     left: 400px;
     right: 0;
 }
 
+/* Info box */
 #info {
-    display: flex;
-    left: 0;
+    left: 800px;
     top: 0;
-    bottom: 0;
-    right: 50%;
+    bottom: 18px;
+    width: 680px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    font-size: 18pt;
+    padding-bottom: 5px;
 }
 
-#timer {
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    right: 0;
+/* Rows within info box */
+#info>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
 }
+
+#game {
+    font-size: 22pt;
+}
+
 
 .screen {
     width: 1520px;
     height: 855px;
-}
-
-.donations {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
 }
