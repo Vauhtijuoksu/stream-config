@@ -24,7 +24,7 @@ function cap(s) {
 
 function formatTime(dateStr) {
     var date = new Date(dateStr);
-    return "Klo " + date.toLocaleTimeString("se-SE", { timeStyle: "short"});
+    return "Klo " + date.toLocaleTimeString("en-SE", { timeStyle: "short"});
 }
 
 function formatEstimate(estimate) {
