@@ -1,0 +1,96 @@
+{
+  "amount": {
+    "1": {
+      "1": 50.0,
+      "2": 50.0,
+      "3": 161.0,
+      "4": 51.0
+    },
+    "2": {
+      "null": 50.0
+    },
+    "6": {
+      "k\u00e4rp\u00e4nen": 10.0,
+      "safefwaafa": 690.0
+    }
+  },
+  "incentives": [
+    {
+      "endtime": "Tue, 28 Apr 2020 13:15:00 GMT",
+      "game": "Testidata",
+      "id": 8,
+      "info": "ei mitt\u00e4\u00e4",
+      "parameters": "50",
+      "title": "asdd",
+      "type": "upgrade"
+    },
+    {
+      "endtime": "Sun, 03 May 2020 06:00:00 GMT",
+      "game": "Okami",
+      "id": 6,
+      "info": "Peliss\u00e4 s\u00e4\u00e4st\u00e4\u00e4 aikaa jos hahmon maskiin piirt\u00e4\u00e4 pisteen, mutta siihen voi piirt\u00e4\u00e4 my\u00f6s jotain hassua jolloin aikaa kuluu luonnollisesti enemm\u00e4n ",
+      "parameters": "",
+      "title": "Piirr\u00e4 hahmon maskiin jotain hasua",
+      "type": "open"
+    },
+    {
+      "endtime": "Sun, 03 May 2020 12:35:00 GMT",
+      "game": "Halo 2 MCC",
+      "id": 2,
+      "info": "UNSC:n budjettileikkausten johdosta joudumme v\u00e4hent\u00e4m\u00e4\u00e4n taistelijoiden k\u00e4yt\u00f6ss\u00e4 olevaa aseistusta turvataksemme mielenterveysty\u00f6n rahoituksen. T\u00e4st\u00e4 syyst\u00e4 myymme joukkojen k\u00e4ytt\u00e4m\u00e4n pistoolin pois 50:ll\u00e4 eurolla. Heti kunhan rahat saadaan kasaan emme ammu en\u00e4\u00e4 laukaustakaan kyseisell\u00e4 pistoolilla.",
+      "parameters": "50",
+      "title": "Myyd\u00e4\u00e4n: M6C personal defense weapon system pistooli. ",
+      "type": "upgrade"
+    },
+    {
+      "endtime": "Sun, 03 May 2020 12:35:00 GMT",
+      "game": "Halo 2 MCC",
+      "id": 3,
+      "info": "UNSC:n budjettileikkausten johdosta joudumme v\u00e4hent\u00e4m\u00e4\u00e4n taistelijoiden k\u00e4yt\u00f6ss\u00e4 olevaa aseistusta turvataksemme mielenterveysty\u00f6n rahoituksen. T\u00e4st\u00e4 syyst\u00e4 myymme joukkojen k\u00e4ytt\u00e4m\u00e4n haulikon pois 50:ll\u00e4 eurolla. Heti kunhan rahat saadaan kasaan emme ammu en\u00e4\u00e4 laukaustakaan kyseisell\u00e4 haulikolla.",
+      "parameters": "50",
+      "title": "Myyd\u00e4\u00e4n: M90 haulikko",
+      "type": "upgrade"
+    },
+    {
+      "endtime": "Mon, 04 May 2020 10:00:00 GMT",
+      "game": "Bloodstained: Ritual of the Night",
+      "id": 7,
+      "info": "Peliss\u00e4 on mukana bossrush, jossa p\u00e4\u00e4see hakkaamaan suurinta osaa bosseista nopeasti l\u00e4pi. L\u00e4pipeluussa k\u00e4ytet\u00e4\u00e4n p\u00e4\u00e4hahmon tallennusta, jolla kaikenlaista kivaa kamaa l\u00f6ytyy jo, eli hyvin nopeasta prosedyyrist\u00e4 kyse. Kuitenkin jos haluaa lis\u00e4haastetta, voi t\u00e4m\u00e4n (yritt\u00e4\u00e4) suorittaa my\u00f6s t\u00e4ysin sokkona silm\u00e4t sidottuina.",
+      "parameters": "50",
+      "title": "Bossrush",
+      "type": "upgrade"
+    },
+    {
+      "endtime": "Mon, 04 May 2020 10:40:00 GMT",
+      "game": "Teenage Mutant Ninja Turtles II: The Arcade Game",
+      "id": 1,
+      "info": "Kaksi pelaajaa, molemmille pit\u00e4isi valita pelattavat hahmot nelj\u00e4st\u00e4 vaihtoehdosta",
+      "parameters": "Leonardo/Donatello/Michelangelo/Raphael",
+      "title": "Valitse kilpparit",
+      "type": "option"
+    },
+    {
+      "endtime": "Mon, 04 May 2020 17:30:00 GMT",
+      "game": "Warcraft 2: Tides of Darkness",
+      "id": 5,
+      "info": "Azerothin maailmasta l\u00f6ytyy neutraaleja el\u00e4imi\u00e4, jotka tulevat v\u00e4lill\u00e4 tielle ja niiden hoiteleminen pois p\u00e4ivilt\u00e4 helpottaa t\u00e4ll\u00f6in sodank\u00e4ynti\u00e4. Ne voisi my\u00f6s s\u00e4\u00e4st\u00e4\u00e4, jos sotataitomme keskell\u00e4 opimme el\u00e4m\u00e4\u00e4n niiden kanssa sovussa. Sin\u00e4 p\u00e4\u00e4t\u00e4t el\u00e4inten kohtalon!",
+      "parameters": "Kill the animals/Save the animals",
+      "title": "Pelasta s\u00f6p\u00f6t el\u00e4imet",
+      "type": "option"
+    },
+    {
+      "endtime": "Mon, 04 May 2020 20:10:00 GMT",
+      "game": "The Lost Vikings",
+      "id": 4,
+      "info": "Luolamiehet ovat napanneet naisoletetun luolanaisen ja pit\u00e4v\u00e4t t\u00e4t\u00e4 h\u00e4kiss\u00e4! Pelastakaa nainen 69 eurolla!",
+      "parameters": "69",
+      "title": "Pelasta luolanainen",
+      "type": "upgrade"
+    }
+  ],
+  "max": {
+    "1": 161.0,
+    "2": 50.0,
+    "6": 690.0
+  }
+}

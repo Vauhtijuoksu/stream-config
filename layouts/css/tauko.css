@@ -9,6 +9,12 @@
     height: 390px;
 }
 
+#incentives {
+    top: 260px;
+    left: 1020px;
+    width: 870px;
+    height: 390px;
+}
 
 
 #info {
@@ -49,4 +55,28 @@ div.half:last-child {
 
 #game {
     font-size: 48px;
+}
+
+#incentives{
+    background-color: black;
+}
+
+.bar{
+    background-color: #ff01fc;
+    border-radius: 4px;
+    height: 50px;
+    padding-left: 13px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 50px;
+}
+.bargoal{
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: right;
+    padding-right: 13px;
+    box-sizing: border-box;
+    margin-bottom: -50px;
 }
