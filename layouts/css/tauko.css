@@ -10,10 +10,11 @@
 }
 
 #incentives {
-    top: 260px;
-    left: 1020px;
+    top: 755px;
+    left: 40px;
     width: 870px;
-    height: 390px;
+    height: 190px;
+    overflow: hidden;
 }
 
 
@@ -55,10 +56,6 @@ div.half:last-child {
 
 #game {
     font-size: 48px;
-}
-
-#incentives{
-    background-color: black;
 }
 
 .bar{

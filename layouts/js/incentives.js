@@ -38,21 +38,21 @@ function getIncentives() {
 
 function updateIncentives() {
     var html = "";
-    for (var i in incentives["incentives"]){
-
-        if (new Date(incentives["incentives"][i]["endtime"]) > Date.now()) {
-            var id = incentives["incentives"][i]["id"]
+    for (const i in incentives.incentives){
+        const incentive = incentives.incentives[i];
+        if (new Date(incentive.endtime) > Date.now()) {
+            var id = incentive.id
             var div = "";
-            div += '<div class="incentive_game">' + incentives["incentives"][i]["game"] + '</div>';
-            div += '<div class="incentive_title">' + incentives["incentives"][i]["title"] + '</div>';
-            div += '<div class="incentive_info">' + incentives["incentives"][i]["info"] + '</div>';
-            if (incentives["incentives"][i]["type"] === "option"){
+            div += '<div class="incentive_game">' + incentive.game + '</div>';
+            div += '<div class="incentive_title">' + incentive.title + '</div>';
+            div += '<div class="incentive_info">' + incentive.info + '</div>';
+            if (incentive.type === "option"){
                 var order = [];
-                for (var o in incentives["incentives"][i]["parameters"].split("/")){
+                for (var o in incentive.parameters.split("/")){
                     var amount = 0
-                    if (incentives["amount"][id.toString()]){
-                        if (incentives["amount"][id.toString()][(parseInt(o)+1).toString()]){
-                            amount = incentives["amount"][id.toString()][(parseInt(o)+1).toString()]
+                    if (incentives.amount[id.toString()]){
+                        if (incentives.amount[id.toString()][(parseInt(o)+1).toString()]){
+                            amount = incentives.amount[id.toString()][(parseInt(o)+1).toString()]
                         }
                     }
                     order.push([o, amount])
@@ -64,13 +64,13 @@ function updateIncentives() {
                     var amount = 0;
                     var max = 1;
 
-                    if (incentives["amount"][id.toString()]){
-                        if (incentives["amount"][id.toString()][(parseInt(o)+1).toString()]){
-                            amount = incentives["amount"][id.toString()][(parseInt(o)+1).toString()]
+                    if (incentives.amount[id.toString()]){
+                        if (incentives.amount[id.toString()][(parseInt(o)+1).toString()]){
+                            amount = incentives.amount[id.toString()][(parseInt(o)+1).toString()]
                         }
                     }
-                    if (incentives["max"][id.toString()]){
-                        max = incentives["max"][id.toString()]
+                    if (incentives.max[id.toString()]){
+                        max = incentives.max[id.toString()]
                     }
 
 
@@ -79,15 +79,15 @@ function updateIncentives() {
                     if (parseFloat(amount) >= parseFloat(max)){
                         div += '; background-color: #00f6ff'
                     }
-                    div += '">' + incentives["incentives"][i]["parameters"].split("/")[o] + '</div>';
+                    div += '">' + incentive.parameters.split("/")[o] + '</div>';
                 }
             }
-            else if (incentives["incentives"][i]["type"] === "upgrade"){
+            else if (incentive.type === "upgrade"){
                 var amount = 0
-                var max = incentives["incentives"][i]["parameters"]
-                if (incentives["amount"][id.toString()]){
-                    if (incentives["amount"][id.toString()][null]){
-                        amount = incentives["amount"][id.toString()][null]
+                var max = incentive.parameters
+                if (incentives.amount[id.toString()]){
+                    if (incentives.amount[id.toString()][null]){
+                        amount = incentives.amount[id.toString()][null]
                     }
                 }
 
@@ -101,16 +101,16 @@ function updateIncentives() {
 
             }
 
-            else if (incentives["incentives"][i]["type"] === "open"){
-                if (i.toString() in Object.keys(incentives["amount"]) ){
-                    var keys = Object.keys(incentives["amount"][id]);
+            else if (incentive.type === "open"){
+                if (i.toString() in Object.keys(incentives.amount) ){
+                    var keys = Object.keys(incentives.amount[id]);
 
                     var order = [];
-                    for (var e in incentives["amount"][id]){
+                    for (var e in incentives.amount[id]){
                         var amount = 0
-                        if (incentives["amount"][id.toString()]){
-                            if (incentives["amount"][id.toString()][e]){
-                                amount = incentives["amount"][id.toString()][e]
+                        if (incentives.amount[id.toString()]){
+                            if (incentives.amount[id.toString()][e]){
+                                amount = incentives.amount[id.toString()][e]
                             }
                         }
                         order.push([e, amount])
@@ -122,13 +122,13 @@ function updateIncentives() {
                         var amount = 0;
                         var max = 1;
 
-                        if (incentives["amount"][id.toString()]){
-                            if (incentives["amount"][id.toString()][o]){
-                                amount = incentives["amount"][id.toString()][o]
+                        if (incentives.amount[id.toString()]){
+                            if (incentives.amount[id.toString()][o]){
+                                amount = incentives.amount[id.toString()][o]
                             }
                         }
-                        if (incentives["max"][id.toString()]){
-                            max = incentives["max"][id.toString()]
+                        if (incentives.max[id.toString()]){
+                            max = incentives.max[id.toString()]
                         }
 
 

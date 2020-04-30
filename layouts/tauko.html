@@ -4,10 +4,13 @@
   <link rel="stylesheet" type="text/css" href="css/tauko.css">
   <script src="js/data.js"></script>
   <script src="js/carousel.js"></script>
+  <script src="js/incentives.js"></script>
 </head>
-<body onload="getGames(); initCarousel();">
+<body onload="getGames(); initCarousel(); incentive_carousel();">
   <div id="canvas"">
-    <div id="sponsors"></div>
+    <div id="sponsors debug">
+      <div></div>
+    </div>
     <div id="info">
       <div>
         <div id="player"></div>
@@ -19,6 +22,9 @@
         <div id="category"></div>
         <div id="console"></div>
       </div>
+    </div>
+    <div id="incentives" class="debug">
+      <div></div>
     </div>
   </div>
 </body>
