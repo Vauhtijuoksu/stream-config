@@ -41,111 +41,65 @@ function updateIncentives() {
     for (const i in incentives.incentives){
         const incentive = incentives.incentives[i];
         if (new Date(incentive.endtime) > Date.now()) {
-            var id = incentive.id
+            var id = incentive.id.toString();
             var div = "";
-            div += '<div class="incentive_game">' + incentive.game + '</div>';
-            div += '<div class="incentive_title">' + incentive.title + '</div>';
-            div += '<div class="incentive_info">' + incentive.info + '</div>';
+            div += `<div class="incentive_title">${incentive.game}: ${incentive.title}</div>`;
+
             if (incentive.type === "option"){
-                var order = [];
-                for (var o in incentive.parameters.split("/")){
-                    var amount = 0
-                    if (incentives.amount[id.toString()]){
-                        if (incentives.amount[id.toString()][(parseInt(o)+1).toString()]){
-                            amount = incentives.amount[id.toString()][(parseInt(o)+1).toString()]
+                const options = incentive.parameters.split('/').map(
+                    (option, index) => {
+                        const num = index.toString();
+                        let amount = 0;
+                        if (incentives.amount[id] && incentives.amount[id][num]) {
+                            amount = incentives.amount[id][num];
                         }
+                        return {name: option, amount: amount};
                     }
-                    order.push([o, amount])
+                ).sort(function(a,b){return b.amount - a.amount;});
 
-                }
-                order.sort(function(a,b){return b[1] - a[1];});
-                for (var j=0; j < order.length; j++){
-                    var o = order[j][0];
-                    var amount = 0;
-                    var max = 1;
-
-                    if (incentives.amount[id.toString()]){
-                        if (incentives.amount[id.toString()][(parseInt(o)+1).toString()]){
-                            amount = incentives.amount[id.toString()][(parseInt(o)+1).toString()]
-                        }
-                    }
-                    if (incentives.max[id.toString()]){
-                        max = incentives.max[id.toString()]
-                    }
-
-
-                    div += '<div class="bargoal">' + amount + 'e</div>';
-                    div += '<div class="bar" style="width:' + parseFloat(amount) /  parseFloat(max)  * 100 + '%'
-                    if (parseFloat(amount) >= parseFloat(max)){
-                        div += '; background-color: #00f6ff'
-                    }
-                    div += '">' + incentive.parameters.split("/")[o] + '</div>';
-                }
-            }
-            else if (incentive.type === "upgrade"){
-                var amount = 0
-                var max = incentive.parameters
-                if (incentives.amount[id.toString()]){
-                    if (incentives.amount[id.toString()][null]){
-                        amount = incentives.amount[id.toString()][null]
-                    }
+                // Just list the options and their amounts here
+                div += formatOptionsList(options);
+            } else if (incentive.type === "upgrade") {
+                let amount = 0
+                const goal = parseFloat(incentive.parameters);
+                if (incentives.amount[id] && incentives.amount[id][null]) {
+                    amount = incentives.amount[id][null];
                 }
 
+                // Bar is a nice way to show this
+                const barGoal = document.createElement('div');
+                barGoal.classList.add('bargoal');
+                barGoal.textContent = `${goal} e`;
 
-                div += '<div class="bargoal">' + max + 'e</div>';
-                div += '<div class="bar" style="width:' + parseFloat(amount) /  parseFloat(max)  * 100 + '%'
-                if (parseFloat(amount) >= parseFloat(max)){
-                    div += '; background-color: #00f6ff'
+                const bar = document.createElement('div');
+                bar.classList.add('bar');
+                if (amount >= goal){
+                    bar.classList.add('success');
                 }
-                div += '">' + amount + 'e</div>';
+                bar.style = `width:${amount / goal * 100}%;`;
+                bar.textContent = `${amount} e`;
+                div += barGoal.outerHTML;
+                div += bar.outerHTML;
+            } else if (incentive.type === "open") {
 
-            }
-
-            else if (incentive.type === "open"){
-                if (i.toString() in Object.keys(incentives.amount) ){
-                    var keys = Object.keys(incentives.amount[id]);
-
-                    var order = [];
-                    for (var e in incentives.amount[id]){
-                        var amount = 0
-                        if (incentives.amount[id.toString()]){
-                            if (incentives.amount[id.toString()][e]){
-                                amount = incentives.amount[id.toString()][e]
-                            }
-                        }
-                        order.push([e, amount])
-
-                    }
-                    order.sort(function(a,b){return b[1] - a[1];});
-                    for (var j=0; j < order.length; j++){
-                        var o = order[j][0];
-                        var amount = 0;
-                        var max = 1;
-
-                        if (incentives.amount[id.toString()]){
-                            if (incentives.amount[id.toString()][o]){
-                                amount = incentives.amount[id.toString()][o]
-                            }
-                        }
-                        if (incentives.max[id.toString()]){
-                            max = incentives.max[id.toString()]
-                        }
-
-
-                        div += '<div class="bargoal">' + amount + 'e</div>';
-                        div += '<div class="bar" style="width:' + parseFloat(amount) /  parseFloat(max)  * 100 + '%'
-                        if (parseFloat(amount) >= parseFloat(max)){
-                            div += '; background-color: #00f6ff'
-                        }
-                        div += '">' + o + '</div>';
-                    }
+                if (incentives.amount[id]) {
+                    let options = Object.entries(incentives.amount[id]).map(o => ({name: o[0], amount: o[1]}));
+                    options.sort(function(a,b){return b[1] - a[1];});
+                    div += formatOptionsList(options);
                 } else {
                     div += 'Tälle kannustimelle ei ole vielä ehdotuksia!'
                 }
             }
-            div += '</div>'
-            html += '<div>' + div + '</div>'
+            html += `<div class="incentive" id="${incentive.id}">${div}</div>`;
         }
     }
     document.getElementById("incentives").innerHTML = html;
+}
+
+function formatOptionsList(options) {
+    return '<ol class="incentive_options">' + 
+        options.map(
+        option => `<li>${option.name}: ${option.amount} e</li>`
+        ).join('\n') +
+        '</ol>';
 }
