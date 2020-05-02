@@ -1,0 +1,32 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/four-three.css">
+  <link rel="stylesheet" type="text/css" href="css/four-three-deaths.css">
+  <script src="js/data.js"></script>
+  <script src="js/carousel.js"></script>
+</head>
+<body onload="getGames(); initCarousel();">
+  <div id="canvas" style="background-image: url('img/layout43coincounter.png');">
+    <div class="screen"></div>
+    <div class="left">
+      <div id="sponsors"></div>
+      <div id="info">
+          <div>
+              <div id="game"></div>
+              <div id="category"></div>
+            </div>
+            <div>
+              <div id="console"></div>
+              <div id="estimate">arvio: </div>
+            </div>
+      </div>
+      <div id="counter">
+        <div id="deathcount">0</div>
+      </div>
+      <div id="player">Pellaaja</div>
+    </div>
+    <div class="donations"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+#canvas {
+    background-image: url('../img/layout43lostvikings.png');
+}
+
+
+#counter {
+    left: 575px;
+    top: 904px;
+    width: 110px;
+    bottom: 11px;
+
+    font-size: 40pt;
+}
+
+#counter2 {
+    left: 726px;
+    top: 904px;
+    width: 110px;
+    bottom: 11px;
+
+    font-size: 40pt;
+}
+
+#counter3 {
+    left: 898px;
+    top: 904px;
+    width: 110px;
+    bottom: 11px;
+
+    font-size: 40pt;
+}

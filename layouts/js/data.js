@@ -73,4 +73,6 @@ function updateInfo(info) {
     var consYear = [game.device, game.year].filter(p => p).join(", ")
     updateField("console", consYear, cap);
     updateField("deathcount", info.death1);
+    updateField("deathcount2", info.death2);
+    updateField("deathcount3", info.death3);
 }

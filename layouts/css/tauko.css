@@ -11,12 +11,87 @@
 
 #incentives {
     top: 755px;
-    left: 40px;
-    width: 870px;
+    left: 37px;
+    width: 877px;
     height: 190px;
     overflow: hidden;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
+.incentive {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.incentive-game {
+    font-size: 36px;
+}
+
+.incentive-title {
+    font-size: 32px;
+}
+
+.incentive-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    padding: 0 -10px;
+}
+
+.incentive-option {
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    border: 1px solid #ff01fc;
+    background-color: #ff01fc66;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    margin: 0 6px;
+}
+
+.incentive-option:nth-child(odd) {
+    border-color: #01fffc;
+    background-color: #01fffc66;
+}
+
+.bar-container {
+    width: 100%;
+    font-size: 30px;
+}
+
+.bar{
+    background-color: #ff01fc;
+    border-radius: 4px;
+    height: 50px;
+    white-space: nowrap;
+    padding-left: 13px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 50px;
+}
+
+.bargoal{
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: right;
+    padding-right: 13px;
+    box-sizing: border-box;
+    margin-bottom: -50px;
+    border: 1px solid #ff01fc66;
+    border-radius: 10px;
+}
 
 #info {
     top: 750px;
@@ -56,24 +131,4 @@ div.half:last-child {
 
 #game {
     font-size: 48px;
-}
-
-.bar{
-    background-color: #ff01fc;
-    border-radius: 4px;
-    height: 50px;
-    padding-left: 13px;
-    box-sizing: border-box;
-    text-align: left;
-    line-height: 50px;
-}
-.bargoal{
-    float: right;
-    height: 50px;
-    line-height: 50px;
-    width: 100%;
-    text-align: right;
-    padding-right: 13px;
-    box-sizing: border-box;
-    margin-bottom: -50px;
 }

@@ -1,49 +1,58 @@
 let incentives_url = "https://vauhtijuoksu.otit.fi/api/incentives";
+let incIndex = 0;
+
+const carousel_time = 6000;
 // uncomment to use test data.
 //incentives_url = "js/test.json";
+function initIncentives() {
+    getIncentives((incentives) => {
+        updateIncentives(incentives);
+        incIndex = 0;
+        incentive_carousel();
+    });
+}
 
-
-let incentives = null;
-
-var incIndex = 0;
 function incentive_carousel() {
-    var slides = document.getElementById("incentives").children;
-    for (var i = 0; i < slides.length; i++) {
+    incIndex++;
+    const slides = document.getElementById("incentives").children;
+
+    if (incIndex > slides.length) {
+        setTimeout(initIncentives, carousel_time);
+        return;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    incIndex++;
-    if (incIndex > slides.length) { incIndex = 1; }
+
     var slide = slides[incIndex-1]
     slide.style.display = "block";
-    var time = 6000;
-    setTimeout(getIncentives, time);
+    setTimeout(incentive_carousel, carousel_time);
 }
 
 
-function getIncentives() {
-
-
+function getIncentives(callback) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", incentives_url);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             incentives = JSON.parse(xhr.responseText);
-            updateIncentives()
-            incentive_carousel()
+            callback(incentives);
         }
     }
     xhr.send();
 }
 
 
-function updateIncentives() {
+function updateIncentives(incentives) {
     var html = "";
     for (const i in incentives.incentives){
         const incentive = incentives.incentives[i];
         if (new Date(incentive.endtime) > Date.now()) {
             var id = incentive.id.toString();
             var div = "";
-            div += `<div class="incentive_title">${incentive.game}: ${incentive.title}</div>`;
+            div += `<div class="incentive-game">${cap(incentive.game)}</div>`;
+            div += `<div class="incentive-title">${cap(incentive.title)}</div>`;
 
             if (incentive.type === "option"){
                 const options = incentive.parameters.split('/').map(
@@ -78,8 +87,10 @@ function updateIncentives() {
                 }
                 bar.style = `width:${amount / goal * 100}%;`;
                 bar.textContent = `${amount} e`;
+                div += '<div class="bar-container">';
                 div += barGoal.outerHTML;
                 div += bar.outerHTML;
+                div += '</div>';
             } else if (incentive.type === "open") {
 
                 if (incentives.amount[id]) {
@@ -90,16 +101,16 @@ function updateIncentives() {
                     div += 'Tälle kannustimelle ei ole vielä ehdotuksia!'
                 }
             }
-            html += `<div class="incentive" id="${incentive.id}">${div}</div>`;
+            html += `<div><div class="incentive" id="${incentive.id}">${div}</div></div>`;
         }
     }
     document.getElementById("incentives").innerHTML = html;
 }
 
 function formatOptionsList(options) {
-    return '<ol class="incentive_options">' + 
-        options.map(
-        option => `<li>${option.name}: ${option.amount} e</li>`
+    return '<div class="incentive-options">' + 
+        options.slice(0,7).map(
+            option => `<div class="incentive-option">${option.name}: ${option.amount} e</div>`
         ).join('\n') +
-        '</ol>';
+        '</div>';
 }

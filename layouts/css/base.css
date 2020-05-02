@@ -68,7 +68,7 @@ div {
     right: 0;
 }
 
-#counter {
+#counter, #counter2, #counter3 {
     font-size: 48pt;
     display: flex;
     align-items: center;
