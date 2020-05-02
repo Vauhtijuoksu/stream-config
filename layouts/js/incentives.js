@@ -98,7 +98,7 @@ function updateIncentives(incentives) {
 
                 if (incentives.amount[id]) {
                     let options = Object.entries(incentives.amount[id]).map(o => ({name: o[0], amount: o[1]}));
-                    options.sort(function(a,b){return b[1] - a[1];});
+                    options.sort(function(a,b){return b.amount - a.amount;});
                     div += formatOptionsList(options);
                 } else {
                     div += 'Tälle kannustimelle ei ole vielä ehdotuksia!'
@@ -113,7 +113,7 @@ function updateIncentives(incentives) {
 function formatOptionsList(options) {
     return '<div class="incentive-options">' + 
         options.slice(0,7).map(
-            option => `<div class="incentive-option">${option.name}: ${option.amount} e</div>`
+            option => `<div class="incentive-option">${cap(option.name)}: ${option.amount} e</div>`
         ).join('\n') +
         '</div>';
 }
