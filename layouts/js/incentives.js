@@ -48,6 +48,9 @@ function updateIncentives(incentives) {
     var html = "";
     for (const i in incentives.incentives){
         const incentive = incentives.incentives[i];
+        if (incentive.endtime.endsWith('GMT')) {
+            incentive.endtime += '+0300';
+        }
         if (new Date(incentive.endtime) > Date.now()) {
             var id = incentive.id.toString();
             var div = "";
