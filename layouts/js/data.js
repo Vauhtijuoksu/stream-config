@@ -45,6 +45,7 @@ function updateField(elementId, data, format) {
             element.style.display = "none";
         }
     }
+    return element;
 }
 
 function updateStatus() {
@@ -65,7 +66,14 @@ function updateInfo(info) {
         return;
     }
     game = games[info.game];
-    updateField("player", game.player, cap);
+    let playerElement = updateField("player", game.player, cap);
+    if (playerElement) {
+        if (game.player && game.player.length > 12) {
+            playerElement.className = 'longname';
+        } else {
+            playerElement.className = '';
+        }
+    }
     updateField("game", game.game, cap);
     updateField("category", game.category, cap);
     updateField("estimate", game.duration, formatEstimate);

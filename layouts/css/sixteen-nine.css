@@ -23,6 +23,10 @@
     height: 40px;
 }
 
+#player.longname {
+    font-size: 28pt;
+}
+
 .bottom {
     bottom: 60px;
     height: 150px;
