@@ -1,6 +1,9 @@
 #canvas {
     background-image: url('../img/layout169halo.png');
 }
+#player {
+    font-size: 28pt;
+}
 
 /* Info box */
 #info {    
