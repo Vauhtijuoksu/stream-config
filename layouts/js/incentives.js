@@ -60,7 +60,7 @@ function updateIncentives(incentives) {
             if (incentive.type === "option"){
                 const options = incentive.parameters.split('/').map(
                     (option, index) => {
-                        const num = index.toString();
+                        const num = (index + 1).toString();
                         let amount = 0;
                         if (incentives.amount[id] && incentives.amount[id][num]) {
                             amount = incentives.amount[id][num];
