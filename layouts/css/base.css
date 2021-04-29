@@ -127,6 +127,12 @@ div {
     background-color: #272736;
 }
 
+#bar-bar {
+    height: 100%;
+    width: 0;
+    background-color: green;
+}
+
 #goal {
     position: absolute;
     bottom: 0;

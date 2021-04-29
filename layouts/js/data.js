@@ -48,6 +48,12 @@ function updateField(elementId, data, format) {
     return element;
 }
 
+function updateDonationbar(current, goal) {
+    var element = document.getElementById('bar-bar');
+    var percent = (current / goal) * 100;
+    element.style.width = `${percent}%`;
+}
+
 function updateStatus() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", info_url);
@@ -55,6 +61,7 @@ function updateStatus() {
         if (xhr.readyState == 4) {
             var info = JSON.parse(xhr.responseText);
             updateInfo(info);
+            updateDonationbar(500, info.goal); // TODO: Get donation amount from gonator
             setTimeout(updateStatus, 2000);
         }
     }
