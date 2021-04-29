@@ -69,7 +69,7 @@ function updateDonations(gonations) {
     donation_cache = donations;
     const activityDiv = document.getElementById('activities');
     activityDiv.innerHTML = '';
-    for (donation of donations) {
+    for (donation of donations.reverse()) {
         var child = document.createElement('div');
         var text = document.createTextNode(`${donation.Name}: ${donation.Amount}€`);
         child.appendChild(text);
