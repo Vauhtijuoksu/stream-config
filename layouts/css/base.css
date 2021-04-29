@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'electricboots';
+    src:  url('./ELECTRICBOOTS.ttf') format('truetype');
+}
+
+html, body {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-family: 'electricboots';
+    color: whitesmoke;
+    text-align: center;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+#canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+}
+
+/* Comment out when not debugging */
+.debug {
+    background-color: #ff000033;
+    font-size: 16pt;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#canvas>div,
+.left>div,
+.bottom>div {
+    position: absolute;
+}
+
+.left {
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sponsors>img {
+    max-width: 90%;
+    max-height: 75%;
+}
+
+.bottom {
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.screen {
+    top: 0;
+    right: 0;
+}
+
+#counter {
+    font-size: 48pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.donations {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+}
