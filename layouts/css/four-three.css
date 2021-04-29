@@ -1,6 +1,3 @@
-#canvas {
-    background-image: url('../img/layout43.png');
-}
 
 .left {
     width: 560px;
@@ -8,12 +5,17 @@
 }
 
 #sponsors {
-    top: 120px;
-    left: 14px;
-    right: 14px;
-    height: 290px;
+    padding-top: 10px;
+    top: 180px;
+    left: 0;
+    right: 0;
+    height: 249px;
 }
-
+#carousel {
+    image-rendering: auto;
+    left: 100px;
+    right: 100px;
+}
 #info {
     top: 430px;
     left: 80px;
@@ -44,12 +46,108 @@
 #player {
     font-size: 32pt;
     bottom: 263px;
-    height: 50px;
-    left: 100px;
-    right: 103px;
 }
 
 .screen {
     width: 1360px;
     height: 1020px;
+}
+
+#vauhtijuoksu {
+    background-image: url('../img/43vjlogo.png');
+    width: 100%;
+    height: 180px;
+}
+
+#clock{
+    height: 165px;
+    width: 156px;
+    background-size: 156px;
+}
+#char{
+    height: 165px;
+    width: 156px;
+    background-size: 156px;
+}
+#console{
+    width: 102px;
+    height: 100px;
+    background-size: 104px;
+}
+.skull{
+    width: 64px;
+    background-size: 52px;
+    height: 40px;
+}
+#estimate{
+    font-size: 32px;
+    text-align: right;
+    bottom: 5px;
+    left: 140px;
+}
+#game{
+    font-size: 48px;
+    text-align: left;
+    top: 10px;
+    left: 30px;
+}
+#category{
+    font-size: 32px;
+    text-align: left;
+    bottom: 20px;
+    left: 30px;
+}
+#release{
+    font-size: 32px;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+.counter{
+    font-size: 32px;
+    text-align: center;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+}
+#time {
+    top: 429px;
+    width: 100%;
+    height: 132px;
+    background-color: #272736;
+}
+#gameinfo{
+    top: 561px;
+    width: 457px;
+    height: 132px;
+    background-color: #272736;
+}
+#extrainfo{
+    top: 561px;
+    right: 0;
+    width: 102px;
+    height: 132px;
+    background-color: #272736;
+}
+.deathcounter{
+    position: relative;
+    height: 100%;
+    width: 64px;
+}
+#deathcounter1 {
+    position: relative;
+    float: left;
+}
+#deathcounter2 {
+    position: relative;
+    float: right;
+}
+#deathcounter3 {
+    position: relative;
+    float: left;
+}
+#deathcounter4  {
+    position: relative;
+    float: right;
 }

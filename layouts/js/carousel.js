@@ -5,7 +5,7 @@ function initCarousel() {
     xhr.open("GET", "carousel.html");
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
-            document.getElementById("sponsors").innerHTML = xhr.responseText;
+            document.getElementById("carousel").innerHTML = xhr.responseText;
             carousel();
         }
     }
@@ -13,7 +13,7 @@ function initCarousel() {
 }
 
 function carousel() {
-    const slides = document.getElementById("sponsors").children;
+    const slides = document.getElementById("carousel").children;
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }

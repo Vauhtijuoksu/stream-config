@@ -1,0 +1,39 @@
+
+
+#sponsors {
+    position: absolute;
+    text-align: left;
+    padding-top: 10px;
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+}
+#carousel {
+    position: absolute;
+    image-rendering: auto;
+    left: auto;
+    top: 0px;
+    bottom: 0;
+    right: 10px;
+    width: 300px;
+}
+
+#vauhtijuoksu {
+    background-image: url('../img/header_text.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 624px;
+    width: 700px;
+    height: 100%;
+}
+.bottom {
+    bottom: 60px;
+    height: 140px;
+    left: 0;
+    right: 0;
+}
+
+#divider {
+    height: 881px;
+}

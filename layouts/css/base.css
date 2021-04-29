@@ -1,20 +1,22 @@
 @font-face {
-    font-family: 'electricboots';
-    src:  url('./ELECTRICBOOTS.ttf') format('truetype');
+    font-family: 'notalot';
+    src:  url('./Notalot35.ttf') format('truetype');
 }
 
 html, body {
     background-color: transparent;
     margin: 0;
     padding: 0;
-    font-family: 'electricboots';
+    font-family: 'notalot';
     color: whitesmoke;
     text-align: center;
+    image-rendering: pixelated;
 }
 
 div {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 #canvas {
@@ -34,8 +36,7 @@ div {
 }
 
 #canvas>div,
-.left>div,
-.bottom>div {
+.left>div {
     position: absolute;
 }
 
@@ -44,15 +45,24 @@ div {
     top: 0;
     display: flex;
     flex-direction: column;
+    border-right: #f2a65e 1px solid;
 }
 
 #sponsors {
+    background-color: #272736;
+    font-size: 48px;
+}
+#carousel {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
-
-#sponsors>img {
+#carousel>img {
     max-width: 90%;
     max-height: 75%;
 }
@@ -60,7 +70,10 @@ div {
 .bottom {
     bottom: 0;
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
+    background-color: #272736;
+    border-top: #f2a65e 1px solid;
 }
 
 .screen {
@@ -81,4 +94,139 @@ div {
     left: 0;
     right: 0;
     height: 60px;
+    display: flex;
+    border-top: #f2a65e 1px solid;
+}
+
+#sum {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 230px;
+    border-right: #f2a65e 1px solid;
+    background-color: #3d6e70;
+}
+
+#activity {
+    position: absolute;
+    height: 49px;
+    bottom: 10px;
+    left: 230px;
+    right: 230px;
+    border-bottom: #f2a65e 1px solid;
+    background-color: #322947;
+}
+
+#bar {
+    position: absolute;
+    height: 10px;
+    bottom: 0;
+    left: 230px;
+    right: 230px;
+    background-color: #272736;
+}
+
+#goal {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 230px;
+
+    background-color: #3d6e70;
+    border-left: #f2a65e 1px solid;
+}
+
+#vauhtijuoksu {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#player {
+    border-top: #f2a65e 1px solid;
+    border-bottom: #f2a65e 1px solid;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: #322947;
+}
+#clock{
+    position: absolute;
+    background-image: url('../img/clock.png');
+    background-position: center center;
+    background-size: 156px;
+}
+#char{
+    position: absolute;
+    background-image: url('../img/clock.png');
+    background-position: center center;
+    background-size: 156px;
+}
+#console{
+    position: absolute;
+    background-image: url('../img/PC.png');
+    background-position: center center;
+    background-size: 156px;
+    height: 130px;
+}
+#deathcounter1 .skull{
+    background-image: url('../img/skull1.png');
+}
+#deathcounter2 .skull{
+    background-image: url('../img/skull2.png');
+}
+#deathcounter3 .skull{
+    background-image: url('../img/skull3.png');
+}
+#deathcounter4 .skull{
+    background-image: url('../img/skull4.png');
+}
+.skull{
+    position: absolute;
+    background-position: center center;
+}
+#estimate {
+    position: absolute;
+}
+#game {
+    position: absolute;
+}
+#category {
+    position: absolute;
+}
+#release {
+    position: absolute;
+}
+.counter {
+    position: absolute;
+}
+/*
+*/
+.deathcounter {
+    display: none;
+}
+.money{
+    padding-top: 2px;
+    font-size: 80px;
+}
+#playername  {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 64px;
+}
+
+
+#divider {
+    background-color: #272736;
+    border-left: #f2a65e 1px solid;
+    border-right: #f2a65e 1px solid;
+    right: 950px;
+    left: 950px;
+    z-index: 100;
 }

@@ -1,5 +1,5 @@
-let games_url = "https://vauhtijuoksu.otit.fi/api/games"
-let info_url = "https://vauhtijuoksu.otit.fi/api/status";
+let games_url = "https://vauhtijuoksu.fi/api/games"
+let info_url = "https://vauhtijuoksu.fi/api/status";
 
 let games = null;
 
@@ -66,7 +66,7 @@ function updateInfo(info) {
         return;
     }
     game = games[info.game];
-    let playerElement = updateField("player", game.player, cap);
+    let playerElement = updateField("playername", game.player, cap);
     if (playerElement) {
         if (game.player && game.player.length > 12) {
             playerElement.className = 'longname';
@@ -77,9 +77,9 @@ function updateInfo(info) {
     updateField("game", game.game, cap);
     updateField("category", game.category, cap);
     updateField("estimate", game.duration, formatEstimate);
-    updateField("time", game.start, formatTime);
+    // updateField("time", game.start, formatTime);
     var consYear = [game.device, game.year].filter(p => p).join(", ")
-    updateField("console", consYear, cap);
+    updateField("release", consYear, cap);
     updateField("deathcount", info.death1);
     updateField("deathcount2", info.death2);
     updateField("deathcount3", info.death3);
