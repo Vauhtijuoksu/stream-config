@@ -118,6 +118,23 @@ div {
     background-color: #322947;
 }
 
+#activity > #activities {
+    height: 100%;
+    width: auto;
+    display: flex;
+    overflow: hidden;
+}
+
+#activities > div.donation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: 1px solid green;
+    padding: 6px;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
 #bar {
     position: absolute;
     height: 10px;

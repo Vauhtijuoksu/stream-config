@@ -1,7 +1,10 @@
 let games_url = "https://vauhtijuoksu.fi/api/games"
 let info_url = "https://vauhtijuoksu.fi/api/status";
+let gonator_url = "https://gonator.vauhtijuoksu.fi/getDonations";
 
 let games = null;
+let goal = null;
+let donation_cache = [];
 
 function getGames() {
     let xhr = new XMLHttpRequest();
@@ -10,6 +13,7 @@ function getGames() {
         if (xhr.readyState == 4) {
             games = JSON.parse(xhr.responseText);
             updateStatus();
+            updateGonator();
         }
     }
     xhr.send();
@@ -48,10 +52,56 @@ function updateField(elementId, data, format) {
     return element;
 }
 
-function updateDonationbar(current, goal) {
+function updateDonations(gonations) {
+    let sum = 0;
+    let donations = [];
+    for (donation of gonations) {
+        sum += donation.Amount;
+        if (donation.Name != "Anonyymi") {
+            donations.push(donation);
+        }
+    }
+
+    if (donations.length == donation_cache.length) {
+        return sum;
+    }
+    // Update latest donations list
+    donation_cache = donations;
+    const activityDiv = document.getElementById('activities');
+    activityDiv.innerHTML = '';
+    for (donation of donations) {
+        var child = document.createElement('div');
+        var text = document.createTextNode(`${donation.Name}: ${donation.Amount}€`);
+        child.appendChild(text);
+        child.id = donation.DonationId
+        child.className = 'donation';
+        activityDiv.appendChild(child);
+    }   
+
+    return sum;
+}
+
+function updateDonationbar(current) {
+    if (goal == null) {
+        return;
+    }
     var element = document.getElementById('bar-bar');
     var percent = (current / goal) * 100;
     element.style.width = `${percent}%`;
+}
+
+function updateGonator() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", gonator_url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var donations = JSON.parse(xhr.responseText);
+            const sum = updateDonations(donations);
+            updateDonationbar(sum);
+            setTimeout(updateGonator, 5000);
+        }
+    }
+    xhr.send()
 }
 
 function updateStatus() {
@@ -61,7 +111,7 @@ function updateStatus() {
         if (xhr.readyState == 4) {
             var info = JSON.parse(xhr.responseText);
             updateInfo(info);
-            updateDonationbar(500, info.goal); // TODO: Get donation amount from gonator
+            goal = info.goal;
             setTimeout(updateStatus, 2000);
         }
     }
