@@ -1,0 +1,131 @@
+/*
+#canvas {
+    background-image: url('../img/layout169.png');
+}
+*/
+/* Left side bar */
+.left {
+    width: 400px;
+    height: 614px;
+}
+
+#sponsors {
+    top: 200px;
+    left: 0;
+    right: 0;
+    height: 350px;
+    padding-top: 20px;
+}
+#player {
+    font-size: 32pt;
+    top: 550px;
+}
+#cam {
+    top: 613px;
+    left: 0;
+    bottom: 60px;
+    width: 650px;
+    border-top: #f2a65e 1px solid;
+    border-right: #f2a65e 1px solid;
+}
+#player.longname {
+    font-size: 28pt;
+}
+
+.bottom {
+    bottom: 60px;
+    height: 165px;
+    left: 650px;
+    right: 0;
+}
+
+
+
+#game {
+    font-size: 22pt;
+}
+
+
+.screen {
+    width: 1520px;
+    height: 855px;
+}
+
+
+#vauhtijuoksu {
+    background-image: url('../img/169vjlogo.png');
+    width: 100%;
+    height: 200px;
+}
+
+#clock{
+    height: 165px;
+    width: 156px;
+    background-size: 156px;
+}
+#char{
+    height: 165px;
+    width: 156px;
+    background-size: 156px;
+}
+#console{
+    width: 156px;
+    background-size: 156px;
+}
+.skull{
+    width: 104px;
+    height: 130px;
+    background-size: 104px;
+}
+#estimate{
+    font-size: 32px;
+    text-align: right;
+    bottom: 30px;
+    right: 20px;
+}
+#game{
+    font-size: 48px;
+    text-align: left;
+    top: 30px;
+    left: 160px;
+}
+#category{
+    font-size: 32px;
+    text-align: left;
+    bottom: 30px;
+    left: 160px;
+}
+#release{
+    font-size: 32px;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+.counter{
+    font-size: 32px;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+#time {
+    position: relative;
+    height: 100%;
+    width: 450px;
+}
+#gameinfo{
+    position: relative;
+    height: 100%;
+    width: 600px;
+}
+#extrainfo{
+    position: relative;
+    height: 100%;
+    width: 156px;
+}
+.deathcounter{
+    position: relative;
+    height: 100%;
+    width: 104px;
+}

@@ -3,11 +3,12 @@
 #sponsors {
     position: absolute;
     text-align: left;
-    padding-top: 10px;
+    padding-top: 20px;
     top: 0px;
     bottom: 0;
     right: 0;
     width: 600px;
+    background-color: #322947;
 }
 #carousel {
     position: absolute;
@@ -19,19 +20,20 @@
     width: 300px;
 }
 
-#vauhtijuoksu {
-    background-image: url('../img/header_text.png');
+#overlay {
+    background-image: url('../img/pohinaoverlay.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 624px;
-    width: 700px;
-    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 60px;
+    right: 0;
 }
 .bottom {
     bottom: 60px;
     height: 140px;
     left: 0;
     right: 0;
+    background-color: #322947;
 }
 
 #divider {
