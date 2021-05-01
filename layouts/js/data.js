@@ -119,11 +119,11 @@ function rotateActivities() {
     }
     let inSlide = activities[inIndex];
 
+    let slideTime = inSlide.dataset.slidetime;
     inSlide.classList.replace('next', 'current');
     outSlide.classList.replace('current', 'previous');
     nextSlide.classList.replace('previous', 'next');
-    setTimeout(rotateActivities, ACTIVITY_TIMER);
-
+    setTimeout(rotateActivities, slideTime);
 }
 
 function updateGonator() {
