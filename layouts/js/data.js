@@ -55,6 +55,11 @@ function updateField(elementId, data, format) {
     return element;
 }
 
+/**
+ * Update the donations list to DOM
+ * - Ignores donations by "Anonyymi"
+ * - Does not update unless new donations are found
+ */
 function updateDonations(gonations) {
     let sum = 0;
     let donations = [];
@@ -79,11 +84,15 @@ function updateDonations(gonations) {
         child.id = donation.DonationId
         child.className = 'donation';
         activityDiv.appendChild(child);
-    }   
+    }
+    // TODO: Show donations list immediately
 
     return sum;
 }
 
+/**
+ * Updates the donation bar with the currently donated amount and the current goal 
+ */
 function updateDonationbar(current) {
     if (goal == null) {
         return;
@@ -98,6 +107,9 @@ function updateDonationbar(current) {
 }
 
 var activityIndex = 0;
+/**
+ * Rotates the activity that is currently displayed in the #activity div
+ */
 function rotateActivities() {
 
     let activities = document.getElementById('activity').children;
@@ -120,12 +132,17 @@ function rotateActivities() {
     let inSlide = activities[inIndex];
 
     let slideTime = inSlide.dataset.slidetime;
+    // TODO: Fix when there's only two
+    // TODO: Allow hiding some or displaying for a longer time temporarily
     inSlide.classList.replace('next', 'current');
     outSlide.classList.replace('current', 'previous');
     nextSlide.classList.replace('previous', 'next');
     setTimeout(rotateActivities, slideTime);
 }
 
+/**
+ * Fetches donations from the Gonator API and updates to UI
+ */
 function updateGonator() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", gonator_url);
