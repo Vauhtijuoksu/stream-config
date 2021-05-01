@@ -48,6 +48,35 @@ function updateField(elementId, data, format) {
     return element;
 }
 
+function updateImage(elementId, data, path) {
+    var element = document.getElementById(elementId);
+    if (element) {
+        if (data) {
+            element.style.backgroundImage = "url('" + path + data + "')";
+        }
+        else {
+            element.style.display = "none";
+        }
+    }
+    return element;
+}
+
+function updateDeath(player, data) {
+    var counter = document.getElementById(("deathcounter" + player).toString());
+    if (data == -1){
+        counter.style.display = "none";
+
+    } else {
+        counter.style.display = "block";
+        for (var i = 0; i < counter.childNodes.length; i++) {
+            if (counter.childNodes[i].className == "counter") {
+                counter.childNodes[i].innerHTML = data;
+                break;
+            }
+        }
+    }
+    return counter;
+}
 function updateStatus() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", info_url);
@@ -61,26 +90,34 @@ function updateStatus() {
     xhr.send();
 }
 
+function checkLongname(element, data, chars) {
+    if (element) {
+        if (data && data.length > chars) {
+            element.className = 'longname';
+        } else {
+            element.className = '';
+        }
+    }
+
+}
+
 function updateInfo(info) {
     if (games == null) {
         return;
     }
     game = games[info.game];
-    let playerElement = updateField("playername", game.player, cap);
-    if (playerElement) {
-        if (game.player && game.player.length > 12) {
-            playerElement.className = 'longname';
-        } else {
-            playerElement.className = '';
-        }
-    }
-    updateField("game", game.game, cap);
-    updateField("category", game.category, cap);
+    let playerElement = updateField("playername", game.player);
+    checkLongname(playerElement, game.player, 20)
+    let gameElement = updateField("game", game.game);
+    checkLongname(gameElement, game.game, 22)
+    let categoryElement = updateField("category", game.category);
+    checkLongname(categoryElement, game.category, 20)
     updateField("estimate", game.duration, formatEstimate);
-    // updateField("time", game.start, formatTime);
-    var consYear = [game.device, game.year].filter(p => p).join(", ")
-    updateField("release", consYear, cap);
-    updateField("deathcount", info.death1);
-    updateField("deathcount2", info.death2);
-    updateField("deathcount3", info.death3);
+    updateImage("char", game.image, "https://www.vauhtijuoksu.fi/static/img/gamespecifics/");
+    updateImage("console", game.device + ".png", "img/consoles/");
+    updateField("release", game.year);
+    updateDeath(1, info.death1);
+    updateDeath(2, info.death2);
+    updateDeath(3, info.death3);
+    updateDeath(4, info.death4);
 }

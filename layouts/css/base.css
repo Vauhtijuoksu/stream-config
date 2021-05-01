@@ -11,6 +11,7 @@ html, body {
     color: whitesmoke;
     text-align: center;
     image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 div {
@@ -167,7 +168,7 @@ div {
 }
 #console{
     position: absolute;
-    background-image: url('../img/PC.png');
+    background-image: url('../img/consoles/PC.png');
     background-position: center center;
     background-size: 156px;
     height: 130px;
@@ -193,9 +194,20 @@ div {
 }
 #game {
     position: absolute;
+    font-size: 64px;
+    padding-top: 10px;
+}
+#game.longname {
+    font-size: 48px;
+    padding-top: 0;
+    margin-top: -5px;
 }
 #category {
+    font-size: 48px;
     position: absolute;
+}
+#category.longname {
+    font-size: 36px;
 }
 #release {
     position: absolute;
@@ -219,6 +231,10 @@ div {
     right: 0;
     bottom: 0;
     font-size: 64px;
+}
+#playername.longname {
+    font-size: 48px;
+    line-height: 50px;
 }
 
 

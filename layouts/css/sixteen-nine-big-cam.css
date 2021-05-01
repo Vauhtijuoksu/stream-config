@@ -41,10 +41,6 @@
 
 
 
-#game {
-    font-size: 22pt;
-}
-
 
 .screen {
     width: 1520px;
@@ -84,13 +80,11 @@
     right: 20px;
 }
 #game{
-    font-size: 48px;
     text-align: left;
     top: 30px;
     left: 160px;
 }
 #category{
-    font-size: 32px;
     text-align: left;
     bottom: 30px;
     left: 160px;

@@ -7,7 +7,7 @@
     top: 0px;
     bottom: 0;
     right: 0;
-    width: 600px;
+    width: 540px;
     background-color: #322947;
 }
 #carousel {
@@ -17,7 +17,7 @@
     top: 0px;
     bottom: 0;
     right: 10px;
-    width: 300px;
+    width: 250px;
 }
 
 #overlay {
@@ -38,4 +38,5 @@
 
 #divider {
     height: 881px;
+    z-index: -1;
 }

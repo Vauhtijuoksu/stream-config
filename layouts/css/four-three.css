@@ -39,9 +39,6 @@
     align-items: baseline;
 }
 
-#game {
-    font-size: 22pt;
-}
 
 #player {
     font-size: 32pt;
@@ -60,7 +57,7 @@
 }
 
 #clock{
-    height: 165px;
+    height: 132px;
     width: 156px;
     background-size: 156px;
 }
@@ -82,17 +79,15 @@
 #estimate{
     font-size: 32px;
     text-align: right;
-    bottom: 5px;
+    bottom: 10px;
     left: 140px;
 }
 #game{
-    font-size: 48px;
     text-align: left;
     top: 10px;
     left: 30px;
 }
 #category{
-    font-size: 32px;
     text-align: left;
     bottom: 20px;
     left: 30px;
