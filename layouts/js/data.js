@@ -6,6 +6,8 @@ let games = null;
 let goal = null;
 let donation_cache = [];
 
+const ACTIVITY_TIMER = 15000;
+
 function getGames() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", games_url);
@@ -13,7 +15,8 @@ function getGames() {
         if (xhr.readyState == 4) {
             games = JSON.parse(xhr.responseText);
             updateStatus();
-            updateGonator();
+            setTimeout(updateGonator, 500);
+            rotateActivities();
         }
     }
     xhr.send();
@@ -85,9 +88,42 @@ function updateDonationbar(current) {
     if (goal == null) {
         return;
     }
+    var sumElement = document.getElementById('sum');
+    sumElement.innerText = `${current}€`
+    var goalElement = document.getElementById('goal');
+    goalElement.innerText = `${goal}€`
     var element = document.getElementById('bar-bar');
     var percent = (current / goal) * 100;
     element.style.width = `${percent}%`;
+}
+
+var activityIndex = 0;
+function rotateActivities() {
+
+    let activities = document.getElementById('activity').children;
+    activityIndex++;
+    if (activityIndex >= activities.length) {
+        activityIndex = 0;
+    }
+    let outSlide = activities[activityIndex];
+
+    let nextIndex = activityIndex - 1;
+    if (nextIndex < 0) {
+        nextIndex = activities.length - 1;
+    }
+    let nextSlide = activities[nextIndex];
+
+    let inIndex = activityIndex + 1
+    if (inIndex >= activities.length) {
+        inIndex = 0;
+    }
+    let inSlide = activities[inIndex];
+
+    inSlide.classList.replace('next', 'current');
+    outSlide.classList.replace('current', 'previous');
+    nextSlide.classList.replace('previous', 'next');
+    setTimeout(rotateActivities, ACTIVITY_TIMER);
+
 }
 
 function updateGonator() {

@@ -4,8 +4,9 @@
   <link rel="stylesheet" type="text/css" href="css/sixteen-nine.css">
   <script src="js/data.js"></script>
   <script src="js/carousel.js"></script>
+  <script src="js/incentives.js"></script>
 </head>
-<body onload="getGames(); initCarousel();">
+<body onload="getGames(); initCarousel(); initIncentives();">
   <div id="canvas">
     <div class="screen"></div>
     <div class="left">
@@ -52,10 +53,19 @@
       </div>
     </div>
     <div class="donations">
-          <div id="sum" class="money">9999e</div>
-          <div id="activity"><div id="activities"></div></div>
+          <div id="sum" class="money"></div>
+          <div id="activity">
+            <div id="activities" class="activity-slide current"></div>
+            <div id="incentives" class="activity-slide next"></div>
+            <div id="schedule" class="activity-slide previous">
+              <ul>
+                <li>Peli: Nyt</li>
+                <li>Toinen peli: Kohta</li>
+              </ul>
+            </div>
+          </div>
           <div id="bar"><div id="bar-bar"></div></div>
-          <div id="goal" class="money">9999e</div>
+          <div id="goal" class="money"></div>
     </div>
   </div>
 </body>

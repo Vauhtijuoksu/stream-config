@@ -1,7 +1,7 @@
 let incentives_url = "https://vauhtijuoksu.fi/api/incentives";
 let incIndex = 0;
 
-const carousel_time = 6000;
+const carousel_time = 12000;
 // uncomment to use test data.
 //incentives_url = "js/test.json";
 function initIncentives() {

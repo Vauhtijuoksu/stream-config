@@ -117,14 +117,36 @@ div {
     right: 230px;
     border-bottom: #f2a65e 1px solid;
     background-color: #322947;
+    overflow: hidden;
 }
 
-#activity > #activities {
-    height: 100%;
+#activity > .activity-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: auto;
     display: flex;
     overflow: hidden;
+    transition: transform .7s ease-in-out;
 }
+
+.activity-slide.current {
+    transform: translateY(0px);
+    visibility: visible;
+}
+
+.activity-slide.next {
+    transform: translateY(-100%);
+    visibility: hidden;
+}
+
+.activity-slide.previous {
+    transform: translateY(100%);
+    visibility: visible;
+}
+
 
 #activities > div.donation {
     display: flex;
