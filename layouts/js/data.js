@@ -62,20 +62,22 @@ function updateImage(elementId, data, path) {
 }
 
 function updateDeath(player, data) {
-    var counter = document.getElementById(("deathcounter" + player).toString());
-    if (data == -1){
-        counter.style.display = "none";
+    var element = document.getElementById(("deathcounter" + player).toString());
+    if (element) {
+        if (data == -1) {
+            element.style.display = "none";
 
-    } else {
-        counter.style.display = "block";
-        for (var i = 0; i < counter.childNodes.length; i++) {
-            if (counter.childNodes[i].className == "counter") {
-                counter.childNodes[i].innerHTML = data;
-                break;
+        } else {
+            element.style.display = "block";
+            for (var i = 0; i < counter.childNodes.length; i++) {
+                if (element.childNodes[i].className == "counter") {
+                    element.childNodes[i].innerHTML = data;
+                    break;
+                }
             }
         }
     }
-    return counter;
+    return element;
 }
 function updateStatus() {
     let xhr = new XMLHttpRequest();
