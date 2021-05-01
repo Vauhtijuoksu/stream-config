@@ -8,6 +8,10 @@
     border-top: #f2a65e 1px solid;
 }
 
+#sponsors > #carousel {
+    bottom: 70px;
+}
+
 .left{
     background-color: #272736;
     width: 961px;
@@ -34,7 +38,7 @@
     left: 10px;
     right: 10px;
     top: 700px;
-    height: 370px;
+    height: 310px;
     font-size: 48px;
 }
 #incentives {
