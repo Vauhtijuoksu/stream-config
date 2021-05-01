@@ -161,7 +161,7 @@ function updateDeath(player, data) {
 
         } else {
             element.style.display = "block";
-            for (var i = 0; i < counter.childNodes.length; i++) {
+            for (var i = 0; i < element.childNodes.length; i++) {
                 if (element.childNodes[i].className == "counter") {
                     element.childNodes[i].innerHTML = data;
                     break;
