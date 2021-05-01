@@ -1,4 +1,4 @@
-let incentives_url = "https://vauhtijuoksu.otit.fi/api/incentives";
+let incentives_url = "https://vauhtijuoksu.fi/api/incentives";
 let incIndex = 0;
 
 const carousel_time = 6000;
