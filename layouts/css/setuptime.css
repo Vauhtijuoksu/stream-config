@@ -1,22 +1,45 @@
-#canvas {
-    background-image: url('../img/tauko.png');
-}
 
 #sponsors {
-    top: 260px;
-    left: 40px;
-    width: 870px;
-    height: 390px;
+    padding-top: 10px;
+    height: 380px;
+    left: 960px;
+    bottom: 0;
+    right: 0;
+    border-top: #f2a65e 1px solid;
 }
 
+.left{
+    background-color: #272736;
+    width: 961px;
+    bottom: 0;
+}
+.top{
+    z-index: 100;
+    height: 180px;
+    right: 961px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: #272736;
+    border-bottom: none;
+}
+.schedule{
+    left: 10px;
+    right: 10px;
+    top: 200px;
+    height: 480px;
+    font-size: 48px;
+}
+.incentives{
+    padding-top: 10px;
+    left: 10px;
+    right: 10px;
+    top: 700px;
+    height: 370px;
+    font-size: 48px;
+}
 #incentives {
-    top: 755px;
-    left: 37px;
-    width: 877px;
-    height: 190px;
     overflow: hidden;
     margin: 0;
-    padding: 0 10px;
     box-sizing: border-box;
 }
 
@@ -131,6 +154,4 @@ div.half:last-child {
     padding-left: 30px;
 }
 
-#game {
-    font-size: 48px;
-}
+

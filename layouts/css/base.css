@@ -11,6 +11,7 @@ html, body {
     color: whitesmoke;
     text-align: center;
     image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 div {
@@ -187,10 +188,11 @@ div {
     background-image: url('../img/clock.png');
     background-position: center center;
     background-size: 156px;
+    background-repeat: no-repeat;
 }
 #console{
     position: absolute;
-    background-image: url('../img/PC.png');
+    background-image: url('../img/consoles/PC.png');
     background-position: center center;
     background-size: 156px;
     height: 130px;
@@ -216,9 +218,20 @@ div {
 }
 #game {
     position: absolute;
+    font-size: 64px;
+    padding-top: 10px;
+}
+#game.longname {
+    font-size: 48px;
+    padding-top: 0;
+    margin-top: -5px;
 }
 #category {
+    font-size: 48px;
     position: absolute;
+}
+#category.longname {
+    font-size: 36px;
 }
 #release {
     position: absolute;
@@ -243,6 +256,10 @@ div {
     bottom: 0;
     font-size: 64px;
 }
+#playername.longname {
+    font-size: 48px;
+    line-height: 50px;
+}
 
 
 #divider {
@@ -252,4 +269,11 @@ div {
     right: 950px;
     left: 950px;
     z-index: 100;
+}
+.top {
+    height: 179px;
+    left: 0;
+    right: 0;
+    border-bottom: #f2a65e 1px solid;
+    background-image: url('../img/longheader.png');
 }

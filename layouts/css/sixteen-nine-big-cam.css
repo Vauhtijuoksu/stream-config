@@ -6,21 +6,28 @@
 /* Left side bar */
 .left {
     width: 400px;
-    bottom: 60px;
+    height: 614px;
 }
 
 #sponsors {
     top: 200px;
     left: 0;
     right: 0;
-    height: 428px;
+    height: 350px;
     padding-top: 20px;
 }
 #player {
     font-size: 32pt;
-    top: 628px;
+    top: 550px;
 }
-
+#cam {
+    top: 613px;
+    left: 0;
+    bottom: 60px;
+    width: 650px;
+    border-top: #f2a65e 1px solid;
+    border-right: #f2a65e 1px solid;
+}
 #player.longname {
     font-size: 28pt;
 }
@@ -28,7 +35,7 @@
 .bottom {
     bottom: 60px;
     height: 165px;
-    left: 400px;
+    left: 650px;
     right: 0;
 }
 

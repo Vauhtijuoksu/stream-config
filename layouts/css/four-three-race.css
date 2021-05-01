@@ -5,16 +5,28 @@
 }
 
 #sponsors {
-    padding-top: 10px;
-    top: 180px;
-    left: 0;
+    position: absolute;
     right: 0;
-    height: 249px;
+    padding-top: 10px;
+    width: 400px;
+    height: 100%;
 }
 #carousel {
     image-rendering: auto;
-    left: 100px;
-    right: 100px;
+}
+.bottomleft {
+    border-right: #f2a65e 1px solid;
+    bottom: 60px;
+    height: 308px;
+    width: 700px;
+    left: 0;
+}
+.bottomright {
+    border-left: #f2a65e 1px solid;
+    bottom: 60px;
+    height: 308px;
+    width: 700px;
+    right: 0;
 }
 #info {
     top: 430px;
@@ -42,34 +54,42 @@
 
 #player {
     font-size: 32pt;
-    bottom: 263px;
+    bottom: 304px;
+    left: 700px;
+    right: 700px;
 }
 
 .screen {
-    width: 1360px;
-    height: 1020px;
+    width: 1920px;
+    height: 712px;
 }
 
 #vauhtijuoksu {
-    background-image: url('../img/43vjlogo.png');
-    width: 100%;
-    height: 180px;
+    position: absolute;
+    background-image: url('../img/header_text.png');
+    width: 300px;
+    background-size: 249px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 60px;
+    bottom: 10px;
+    top: auto;
 }
 
 #clock{
-    height: 132px;
-    width: 156px;
-    background-size: 156px;
-}
-#char{
     height: 165px;
     width: 156px;
     background-size: 156px;
 }
+#char{
+    height: 260px;
+    width: 300px;
+    background-size: 260px;
+}
 #console{
-    width: 102px;
+    width: 156px;
     height: 100px;
-    background-size: 104px;
+    background-size: 156px;
 }
 .skull{
     width: 64px;
@@ -79,8 +99,8 @@
 #estimate{
     font-size: 32px;
     text-align: right;
-    bottom: 10px;
-    left: 140px;
+    bottom: 20px;
+    right: 30px;
 }
 #game{
     text-align: left;
@@ -107,23 +127,22 @@
     right: 0;
 }
 #time {
-    top: 429px;
+    position: absolute;
     width: 100%;
-    height: 132px;
-    background-color: #272736;
+    height: 152px;
 }
-#gameinfo{
-    top: 561px;
-    width: 457px;
-    height: 132px;
-    background-color: #272736;
+#gameinfo {
+    position: absolute;
+    bottom: 0;
+    width: 550px;
+    height: 152px;
 }
-#extrainfo{
-    top: 561px;
+#extrainfo {
+    position: absolute;
+    bottom: 0;
     right: 0;
-    width: 102px;
-    height: 132px;
-    background-color: #272736;
+    width: 156px;
+    height: 152px;
 }
 .deathcounter{
     position: relative;
@@ -145,4 +164,8 @@
 #deathcounter4  {
     position: relative;
     float: right;
+}
+#divider {
+    background-color: #322947;
+    height: 713px;
 }
