@@ -138,6 +138,10 @@ div {
     z-index: 100;
 }
 
+.activity-slide.forced.current ~ .activity-slide {
+    visibility: hidden;
+}
+
 .activity-slide.current {
     transform: translateY(0px);
     visibility: visible;

@@ -3,6 +3,7 @@ let info_url = "https://vauhtijuoksu.fi/api/status";
 let gonator_url = "https://gonator.vauhtijuoksu.fi/getDonations";
 
 let games = null;
+let current = 0;
 let goal = null;
 let donation_cache = [];
 
@@ -125,12 +126,32 @@ function updateDonations(gonations) {
 /**
  * Updates the donation bar with the currently donated amount and the current goal 
  */
-function updateDonationbar(current) {
+function updateDonationbar(newSum) {
     if (goal == null) {
         return;
     }
-    var sumElement = document.getElementById('sum');
-    sumElement.innerText = `${current}€`
+
+    const updateCurrent = (target) => {
+        const diff = target - current;
+        if (diff > 0) {
+            let timeout = 10000 / diff;
+            if (timeout < 30) {
+                current = Math.round(current + (30 / timeout));
+                timeout = 30;
+            } else {
+                current++;
+            }
+            console.log(timeout, current, target);
+            var sumElement = document.getElementById('sum');
+            sumElement.innerText = `${current}€`
+
+            setTimeout(updateCurrent, timeout, target);
+        }
+    }
+
+    updateCurrent(newSum);
+    
+    
     var goalElement = document.getElementById('goal');
     goalElement.innerText = `${goal}€`
     var element = document.getElementById('bar-bar');
