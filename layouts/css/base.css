@@ -128,8 +128,14 @@ div {
     right: 0;
     width: auto;
     display: flex;
+    align-items: center;
+    padding-left: 10px;
     overflow: hidden;
     transition: transform .7s ease-in-out;
+}
+
+.activity-slide.forced.current {
+    z-index: 100;
 }
 
 .activity-slide.current {
@@ -147,15 +153,24 @@ div {
     visibility: visible;
 }
 
-
-#activities > div.donation {
+#activities > .donation {
     display: flex;
     align-items: center;
     height: 100%;
     border: 1px solid green;
     padding: 6px;
-    font-size: 24px;
+    font-size: 36px;
     white-space: nowrap;
+    color: #aaa;
+}
+
+#activities > .donation:first-child {
+    margin-left: -10px;
+}
+
+#activities > .donation.new {
+    background-color: #0003;
+    color: #fff;
 }
 
 #bar {

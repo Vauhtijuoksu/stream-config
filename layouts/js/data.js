@@ -6,6 +6,8 @@ let games = null;
 let goal = null;
 let donation_cache = [];
 
+let activityRotationDisabled = false;
+let activityRotationTimeout = null;
 const ACTIVITY_TIMER = 15000;
 
 function getGames() {
@@ -70,22 +72,52 @@ function updateDonations(gonations) {
         }
     }
 
+    const activityDiv = document.getElementById('activities');
+
     if (donations.length == donation_cache.length) {
+        if (!activityRotationDisabled) {
+            activityDiv.innerHTML = '';
+            activityDiv.innerText = 'Tee oma lahjoituksesi osoitteessa vauhtijuoksu.fi/#lahjoita'
+        }
         return sum;
     }
-    // Update latest donations list
-    donation_cache = donations;
-    const activityDiv = document.getElementById('activities');
+
     activityDiv.innerHTML = '';
+    // Update latest donations list
+    
+    let i = 0;
     for (donation of donations.reverse()) {
         var child = document.createElement('div');
         var text = document.createTextNode(`${donation.Name}: ${donation.Amount}€`);
         child.appendChild(text);
-        child.id = donation.DonationId
+        child.id = donation.DonationId;
         child.className = 'donation';
+
+        // Add class the New entries in donations list
+        if (!donation_cache.find((d) => d.DonationId == donation.DonationId)) {
+            child.classList.add('new');
+        }
         activityDiv.appendChild(child);
+        i++;
+        if (i > 15) {
+            break;
+        }
     }
-    // TODO: Show donations list immediately
+    donation_cache = donations.reverse();
+
+    // Show donations list immediately
+    let classList = activityDiv.classList.toString();
+    activityDiv.classList.remove('previous', 'next');
+    activityDiv.classList.add('current', 'forced');
+    if (activityRotationDisabled) {
+        clearTimeout(activityRotationTimeout);
+    }
+    activityRotationDisabled = true;
+    activityRotationTimeout = setTimeout(() => {
+        activityDiv.className = classList;
+        activityRotationDisabled = false;
+        rotateActivities();
+    }, 45000);
 
     return sum;
 }
@@ -111,9 +143,11 @@ var activityIndex = 0;
  * Rotates the activity that is currently displayed in the #activity div
  */
 function rotateActivities() {
+    if (activityRotationDisabled) return;
 
     let activities = document.getElementById('activity').children;
     activityIndex++;
+
     if (activityIndex >= activities.length) {
         activityIndex = 0;
     }
