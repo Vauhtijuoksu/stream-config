@@ -115,9 +115,16 @@ div {
     bottom: 10px;
     left: 230px;
     right: 230px;
+    font-size: 36px;
     border-bottom: #f2a65e 1px solid;
     background-color: #322947;
     overflow: hidden;
+}
+
+#activity li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 15px;
 }
 
 #activity > .activity-slide {
