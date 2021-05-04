@@ -2,10 +2,13 @@ let games_url = "https://vauhtijuoksu.fi/api/games"
 let info_url = "https://vauhtijuoksu.fi/api/status";
 let gonator_url = "https://gonator.vauhtijuoksu.fi/getDonations";
 
+
 let games = null;
 let current = 0;
 let goal = null;
-let donation_cache = [];
+let shown_donations = [];
+
+let donationsInitialized = false;
 
 let activityRotationDisabled = false;
 let activityRotationTimeout = null;
@@ -78,10 +81,13 @@ function updateDonations(gonations) {
 
     const activityDiv = document.getElementById('activities');
 
-    if (donations.length == donation_cache.length) {
+    if (donations.length == shown_donations.length || !donationsInitialized) {
         if (!activityRotationDisabled) {
             activityDiv.innerHTML = '';
             activityDiv.innerText = idletexts[current_idletext]
+        }
+        if (!donationsInitialized) {
+            shown_donations = donations.reverse();
         }
         return sum;
     }
@@ -90,6 +96,7 @@ function updateDonations(gonations) {
     // Update latest donations list
     
     let i = 0;
+
     for (donation of donations.reverse()) {
         var child = document.createElement('div');
         var text = document.createTextNode(`${donation.Name}:  ${donation.Amount}€`);
@@ -98,7 +105,7 @@ function updateDonations(gonations) {
         child.className = 'donation';
 
         // Add class the New entries in donations list
-        if (!donation_cache.find((d) => d.DonationId == donation.DonationId)) {
+        if (!shown_donations.find((d) => d.DonationId == donation.DonationId)) {
             child.classList.add('new');
         }
         activityDiv.appendChild(child);
@@ -112,7 +119,8 @@ function updateDonations(gonations) {
             break;
         }
     }
-    donation_cache = donations.reverse();
+    
+    shown_donations = donations.reverse();
 
     // Show donations list immediately
     let classList = activityDiv.classList.toString();
@@ -124,6 +132,7 @@ function updateDonations(gonations) {
     activityRotationDisabled = true;
     activityRotationTimeout = setTimeout(() => {
         activityDiv.className = classList;
+        activityDiv.classList.remove('forced');
         activityRotationDisabled = false;
         rotateActivities();
     }, 45000);
@@ -138,6 +147,7 @@ function updateDonationbar(newSum) {
     if (goal == null) {
         return;
     }
+
 
     const updateCurrent = (target) => {
         const diff = target - current;
@@ -157,7 +167,13 @@ function updateDonationbar(newSum) {
         }
     }
 
-    updateCurrent(newSum);
+    if (donationsInitialized) {
+        updateCurrent(newSum);
+    } else {
+        current = newSum;
+        var sumElement = document.getElementById('sum');
+        sumElement.innerText = `${current}€`
+    }
     
     
     var goalElement = document.getElementById('goal');
@@ -220,6 +236,7 @@ function updateGonator() {
             var donations = JSON.parse(xhr.responseText);
             const sum = updateDonations(donations);
             updateDonationbar(sum);
+            donationsInitialized = true;
             setTimeout(updateGonator, 5000);
         }
     }
