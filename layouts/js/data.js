@@ -126,7 +126,7 @@ function updateDonations(gonations) {
         activityDiv.className = classList;
         activityRotationDisabled = false;
         rotateActivities();
-    }, 45);
+    }, 45000);
 
     return sum;
 }
