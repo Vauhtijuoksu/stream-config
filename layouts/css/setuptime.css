@@ -1,15 +1,17 @@
 
 #sponsors {
     padding-top: 10px;
-    height: 380px;
+    height: 320px;
     left: 960px;
-    bottom: 0;
+    bottom: 60px;
     right: 0;
     border-top: #f2a65e 1px solid;
 }
 
 #sponsors > #carousel {
-    bottom: 70px;
+    bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .left{
@@ -31,15 +33,14 @@
     right: 10px;
     top: 200px;
     height: 480px;
-    font-size: 48px;
+    font-size: 36px;
 }
 .incentives{
-    padding-top: 10px;
     left: 10px;
     right: 10px;
-    top: 700px;
-    height: 310px;
-    font-size: 48px;
+    top: 720px;
+    height: 210px;
+    font-size: 36px;
 }
 #incentives {
     overflow: hidden;
@@ -57,11 +58,11 @@
 }
 
 .incentive-game {
-    font-size: 36px;
+    font-size: 64px;
 }
 
 .incentive-title {
-    font-size: 32px;
+    font-size: 48px;
 }
 
 .incentive-options {
@@ -77,10 +78,10 @@
 .incentive-option {
     height: 50px;
     line-height: 50px;
-    font-size: 30px;
-    border: 1px solid #ff01fc;
-    background-color: #ff01fc66;
-    border-radius: 10px;
+    font-size: 32px;
+    border: 1px solid #f2a65e;
+    background-color: #ba6156;
+    border-radius: 2px;
     padding-left: 8px;
     padding-right: 8px;
     box-sizing: border-box;
@@ -89,18 +90,18 @@
 }
 
 .incentive-option:nth-child(odd) {
-    border-color: #01fffc;
-    background-color: #01fffc66;
+    border-color: #ff6b97;
+    background-color: #80366b;
 }
 
 .bar-container {
     width: 100%;
-    font-size: 30px;
+    font-size: 32px;
 }
 
 .bar{
-    background-color: #ff01fc;
-    border-radius: 4px;
+    background-color: #3ca370;
+    border-radius: 5px;
     height: 50px;
     white-space: nowrap;
     padding-left: 13px;
@@ -118,8 +119,8 @@
     padding-right: 13px;
     box-sizing: border-box;
     margin-bottom: -50px;
-    border: 1px solid #ff01fc66;
-    border-radius: 10px;
+    border: 1px solid #3d6e70;
+    border-radius: 3px;
 }
 
 #info {
@@ -158,4 +159,51 @@ div.half:last-child {
     padding-left: 30px;
 }
 
-
+#setupschedule {
+    height:400px;
+}
+#setupschedule .schedulerow {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 90px;
+    margin-top: 9px;
+    margin-bottom: 8px;
+}
+#setupschedule .scheduletime {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    text-align: right;
+    font-size: 112px;
+}
+#setupschedule .schedulegame {
+    position: absolute;
+    text-align: left;
+    left: 220px;
+    top: 0;
+    height: 48px;
+    font-size: 48px;
+}
+#setupschedule .schedulecategory {
+    position: absolute;
+    text-align: left;
+    left: 220px;
+    top: 36px;
+    font-size: 32px;
+}
+#setupschedule .scheduleplayer {
+    position: absolute;
+    text-align: left;
+    left: 220px;
+    top: 64px;
+    font-size: 32px;
+}
+#setupschedule .divider {
+    display: none;
+}
+.header-txt{
+    font-size: 48px;
+}

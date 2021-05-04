@@ -8,7 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'notalot';
-    color: whitesmoke;
+    color: #ffffeb;
     text-align: center;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
@@ -168,20 +168,28 @@ div {
     display: flex;
     align-items: center;
     height: 100%;
-    border: 1px solid green;
     padding: 6px;
     font-size: 36px;
     white-space: nowrap;
-    color: #aaa;
 }
 
-#activities > .donation:first-child {
-    margin-left: -10px;
-}
 
 #activities > .donation.new {
-    background-color: #0003;
-    color: #fff;
+    color: #ffe478;
+    animation: color-change 5s infinite;
+}
+
+@keyframes color-change {
+  0% { color: #ffe478; }
+  33% { color: #ff6b97; }
+  66% { color: #cfff70; }
+  100% { color: #ffe478; }
+}
+
+.divider {
+    font-size: 64px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #bar {
@@ -196,7 +204,7 @@ div {
 #bar-bar {
     height: 100%;
     width: 0;
-    background-color: green;
+    background-color: #3ca370;
 }
 
 #goal {
@@ -324,4 +332,135 @@ div {
     right: 0;
     border-bottom: #f2a65e 1px solid;
     background-image: url('../img/longheader.png');
+}
+
+.activity-slide .schedulerow {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    font-size: 16px;
+}
+.activity-slide .schedulerow > div {
+    font-size: 32px;
+    text-wrap: none;
+    white-space: nowrap;
+    margin-right: 7px;
+    line-height: 64px;
+}
+
+.activity-slide .schedulegame:before {
+   content: "- ";
+}
+.activity-slide .schedulecategory:before {
+   content: "- ";
+}
+.activity-slide .scheduleplayer:before {
+   content: "- ";
+}
+.activity-slide .scheduleplayer {
+}
+.activity-slide .schedulerow > .divider {
+    font-size: 64px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.activity-slide .incentive {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: relative;
+    font-size: 32px;
+    line-height: 48px;
+    width: 5000px;
+}
+.activity-slide .incentive > div {
+    font-size: 32px;
+    text-wrap: none;
+    white-space: nowrap;
+    margin-right: 7px;
+    line-height: 48px;
+}
+.activity-slide .incentive > div:first-child {
+    padding-left: 20px;
+}
+
+.activity-slide .incentive:before {
+   content: "Tuleva kannustin: ";
+}
+.activity-slide .incentive-title:before {
+   content: "- ";
+}
+
+.activity-slide .incentive-game {
+    font-size: 64px;
+}
+
+.activity-slide .incentive-title {
+    font-size: 48px;
+}
+
+.activity-slide .incentive-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0 0;
+    max-width: 100%;
+}
+
+.activity-slide .incentive-option {
+    height: 34px;
+    font-size: 32px;
+    border: 1px solid #f2a65e;
+    background-color: #ba6156;
+    border-radius: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    margin: 0 6px;
+    flex-shrink: 0;
+    line-height: 34px;
+}
+
+.activity-slide .incentive-option:nth-child(odd) {
+    border-color: #ff6b97;
+    background-color: #80366b;
+}
+
+.activity-slide .bar-container {
+    align-items: center;
+    display: inline-block;
+    width: 200px;
+    font-size: 32px;
+    margin-top: 7px;
+}
+
+.activity-slide .bar{
+    background-color: #3ca370;
+    border-radius: 5px;
+    height: 34px;
+    white-space: nowrap;
+    padding-left: 13px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 34px;
+}
+
+.activity-slide .bargoal{
+    float: right;
+    height: 34px;
+    width: 100%;
+    text-align: right;
+    padding-right: 13px;
+    box-sizing: border-box;
+    margin-bottom: -50px;
+    border: 1px solid #3d6e70;
+    border-radius: 3px;
+    line-height: 34px;
 }

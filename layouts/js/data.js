@@ -9,6 +9,9 @@ let donation_cache = [];
 
 let activityRotationDisabled = false;
 let activityRotationTimeout = null;
+let idletexts = [""]
+let current_idletext = 0
+
 const ACTIVITY_TIMER = 15000;
 
 function getGames() {
@@ -78,7 +81,7 @@ function updateDonations(gonations) {
     if (donations.length == donation_cache.length) {
         if (!activityRotationDisabled) {
             activityDiv.innerHTML = '';
-            activityDiv.innerText = 'Tee oma lahjoituksesi osoitteessa vauhtijuoksu.fi/#lahjoita'
+            activityDiv.innerText = idletexts[current_idletext]
         }
         return sum;
     }
@@ -89,7 +92,7 @@ function updateDonations(gonations) {
     let i = 0;
     for (donation of donations.reverse()) {
         var child = document.createElement('div');
-        var text = document.createTextNode(`${donation.Name}: ${donation.Amount}€`);
+        var text = document.createTextNode(`${donation.Name}:  ${donation.Amount}€`);
         child.appendChild(text);
         child.id = donation.DonationId;
         child.className = 'donation';
@@ -99,6 +102,11 @@ function updateDonations(gonations) {
             child.classList.add('new');
         }
         activityDiv.appendChild(child);
+        var divider = document.createElement('div');
+        text = document.createTextNode(">");
+        divider.appendChild(text);
+        divider.className = 'divider';
+        activityDiv.appendChild(divider);
         i++;
         if (i > 15) {
             break;
@@ -118,7 +126,7 @@ function updateDonations(gonations) {
         activityDiv.className = classList;
         activityRotationDisabled = false;
         rotateActivities();
-    }, 45000);
+    }, 45);
 
     return sum;
 }
@@ -141,7 +149,7 @@ function updateDonationbar(newSum) {
             } else {
                 current++;
             }
-            console.log(timeout, current, target);
+            // console.log(timeout, current, target);
             var sumElement = document.getElementById('sum');
             sumElement.innerText = `${current}€`
 
@@ -189,6 +197,12 @@ function rotateActivities() {
     let slideTime = inSlide.dataset.slidetime;
     // TODO: Fix when there's only two
     // TODO: Allow hiding some or displaying for a longer time temporarily
+    if (nextSlide.id === 'activities'){
+        current_idletext += 1;
+        if (current_idletext >= idletexts.length) {
+            current_idletext = 0
+        }
+    }
     inSlide.classList.replace('next', 'current');
     outSlide.classList.replace('current', 'previous');
     nextSlide.classList.replace('previous', 'next');
@@ -251,6 +265,7 @@ function updateStatus() {
             var info = JSON.parse(xhr.responseText);
             updateInfo(info);
             goal = info.goal;
+            idletexts = info.motds
             setTimeout(updateStatus, 2000);
         }
     }
@@ -266,6 +281,26 @@ function checkLongname(element, data, chars) {
         }
     }
 
+}
+function updateSchedule(elementID, games, current, count, offset){
+    var element = document.getElementById(elementID);
+    if (element){
+        var txt = ""
+        for (var i = 0; i < count; i++){
+            if (i+current+offset >= games.length){
+                break
+            }
+            var game = games[current+i+offset];
+            txt += "<div class='schedulerow'>"
+            txt += "<div class='scheduletime'>" + game.start.split(" ")[1].slice(0,5) + "</div>"
+            txt += "<div class='schedulegame'>" + game.game  + "</div>"
+            txt += "<div class='schedulecategory'>" + game.category  + "</div>"
+            txt += "<div class='scheduleplayer'>" + game.player +"</div>"
+            txt += "<div class='divider'>" + ">" +"</div>"
+            txt += "</div>"
+        }
+        element.innerHTML = txt;
+    }
 }
 
 function updateInfo(info) {
@@ -283,6 +318,8 @@ function updateInfo(info) {
     updateImage("char", game.image, "https://www.vauhtijuoksu.fi/static/img/gamespecifics/");
     updateImage("console", game.device + ".png", "img/consoles/");
     updateField("release", game.year);
+    updateSchedule("setupschedule", games, info.game, 4, 0);
+    updateSchedule("schedule", games, info.game, 4, 1);
     updateDeath(1, info.death1);
     updateDeath(2, info.death2);
     updateDeath(3, info.death3);
