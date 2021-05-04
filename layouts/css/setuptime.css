@@ -207,3 +207,20 @@ div.half:last-child {
 .header-txt{
     font-size: 48px;
 }
+
+.deerboy{
+    position: absolute;
+    top: 665px;
+    right: 10px;
+    width: 400px;
+    text-align: right;
+    font-size: 32px;
+    vertical-align: top;
+    z-index: 100;
+}
+.deerboy > img {
+    text-align: right;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: -35px;
+}
