@@ -54,8 +54,8 @@ function updateIncentives(incentives) {
         if (new Date(incentive.endtime) > Date.now()) {
             var id = incentive.id.toString();
             var div = "";
-            div += `<div class="incentive-game">${cap(incentive.game)}</div>`;
-            div += `<div class="incentive-title">${cap(incentive.title)}</div>`;
+            div += `<div class="incentive-game">${incentive.game}</div>`;
+            div += `<div class="incentive-title">${incentive.title}</div>`;
 
             if (incentive.type === "option"){
                 const options = incentive.parameters.split('/').map(
@@ -113,7 +113,7 @@ function updateIncentives(incentives) {
 function formatOptionsList(options) {
     return '<div class="incentive-options">' + 
         options.slice(0,7).map(
-            option => `<div class="incentive-option">${cap(option.name)}: ${option.amount} e</div>`
+            option => `<div class="incentive-option">${option.name}: ${option.amount} e</div>`
         ).join('\n') +
         '</div>';
 }
