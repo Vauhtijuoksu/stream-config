@@ -1,11 +1,15 @@
 
 #sponsors {
+    background-image: url('../img/bg.png');
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: repeat-x;
     padding-top: 10px;
     height: 320px;
     left: 960px;
     bottom: 60px;
     right: 0;
-    border-top: #f2a65e 1px solid;
+    border-top: #18191f 1px solid;
 }
 
 #sponsors > #carousel {
@@ -15,18 +19,17 @@
 }
 
 .left{
-    background-color: #272736;
     width: 961px;
     bottom: 0;
-}
-.top{
-    z-index: 100;
-    height: 180px;
-    right: 961px;
-    background-repeat: no-repeat;
+    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    background-image: url('../img/bg.png');
     background-position: top center;
-    background-color: #272736;
-    border-bottom: none;
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+}
+
+.longheader{
+    right: 50%;
 }
 .schedule{
     left: 10px;
@@ -34,8 +37,10 @@
     top: 200px;
     height: 480px;
     font-size: 36px;
+    z-index: 100000;
 }
 .incentives{
+    position: relative;
     left: 10px;
     right: 10px;
     top: 720px;
@@ -43,13 +48,18 @@
     font-size: 36px;
 }
 #incentives {
+    position: relative;
     overflow: hidden;
-    margin: 0;
+    height: 200px;
+    margin-top: 40px;
     box-sizing: border-box;
 }
-
+#incentives div {
+    position: relative;
+}
 .incentive {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -79,28 +89,29 @@
     height: 50px;
     line-height: 50px;
     font-size: 32px;
-    border: 1px solid #f2a65e;
-    background-color: #ba6156;
     border-radius: 2px;
     padding-left: 8px;
     padding-right: 8px;
     box-sizing: border-box;
     margin: 0 6px;
     flex-shrink: 0;
+    border: 1px solid #da9f8a;
+    background-color: #9d6e68;
 }
-
-.incentive-option:nth-child(odd) {
-    border-color: #ff6b97;
-    background-color: #80366b;
+.activity-slide .incentive-option:nth-child(odd) {
+    border-color: #e988cf;
+    background-color: #a34ea7;
 }
 
 .bar-container {
     width: 100%;
     font-size: 32px;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .bar{
-    background-color: #3ca370;
+    background-color: #2b8d38;
     border-radius: 5px;
     height: 50px;
     white-space: nowrap;
@@ -119,7 +130,7 @@
     padding-right: 13px;
     box-sizing: border-box;
     margin-bottom: -50px;
-    border: 1px solid #3d6e70;
+    border: 1px solid #1f5e3f;
     border-radius: 3px;
 }
 
@@ -160,6 +171,8 @@ div.half:last-child {
 }
 
 #setupschedule {
+    margin-top: 60px;
+    position: relative;
     height:400px;
 }
 #setupschedule .schedulerow {
@@ -168,7 +181,7 @@ div.half:last-child {
     width: 100%;
     height: 90px;
     margin-top: 9px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 #setupschedule .scheduletime {
     position: absolute;
@@ -177,7 +190,7 @@ div.half:last-child {
     bottom: 0;
     width: 200px;
     text-align: right;
-    font-size: 112px;
+    font-size: 86px;
 }
 #setupschedule .schedulegame {
     position: absolute;
@@ -185,14 +198,14 @@ div.half:last-child {
     left: 220px;
     top: 0;
     height: 48px;
-    font-size: 48px;
+    font-size: 42px;
 }
 #setupschedule .schedulecategory {
     position: absolute;
     text-align: left;
     left: 220px;
-    top: 36px;
-    font-size: 32px;
+    top: 38px;
+    font-size: 28px;
 }
 #setupschedule .scheduleplayer {
     position: absolute;

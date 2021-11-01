@@ -1,6 +1,6 @@
-let games_url = "https://vauhtijuoksu.fi/api/games"
-let info_url = "https://vauhtijuoksu.fi/api/status";
-let gonator_url = "https://gonator.vauhtijuoksu.fi/getDonations";
+let games_url = "https://api.dev.vauhtijuoksu.fi/gamedata"
+let info_url = "https://legacy.vauhtijuoksu.fi/api/legacy/status";
+let gonator_url = "https://api.dev.vauhtijuoksu.fi/donations";
 
 
 let games = null;
@@ -73,8 +73,8 @@ function updateDonations(gonations) {
     let sum = 0;
     let donations = [];
     for (donation of gonations) {
-        sum += donation.Amount;
-        if (donation.Name != "Anonyymi") {
+        sum += donation.amount;
+        if (donation.name != "Anonyymi") {
             donations.push(donation);
         }
     }
@@ -99,13 +99,13 @@ function updateDonations(gonations) {
 
     for (donation of donations.reverse()) {
         var child = document.createElement('div');
-        var text = document.createTextNode(`${donation.Name}:  ${donation.Amount}€`);
+        var text = document.createTextNode(`${donation.name}:  ${donation.amount}€`);
         child.appendChild(text);
-        child.id = donation.DonationId;
+        child.id = donation.id;
         child.className = 'donation';
 
         // Add class the New entries in donations list
-        if (!shown_donations.find((d) => d.DonationId == donation.DonationId)) {
+        if (!shown_donations.find((d) => d.id == donation.id)) {
             child.classList.add('new');
         }
         activityDiv.appendChild(child);
@@ -172,12 +172,12 @@ function updateDonationbar(newSum) {
     } else {
         current = newSum;
         var sumElement = document.getElementById('sum');
-        sumElement.innerText = `${current}€`
+        sumElement.innerText = `${current} €`
     }
     
     
     var goalElement = document.getElementById('goal');
-    goalElement.innerText = `${goal}€`
+    goalElement.innerText = `${goal} €`
     var element = document.getElementById('bar-bar');
     var percent = (current / goal) * 100;
     element.style.width = `${percent}%`;
@@ -308,11 +308,13 @@ function updateSchedule(elementID, games, current, count, offset){
                 break
             }
             var game = games[current+i+offset];
+            let player = game.player.split(",").join(" & ")
+            var date = new Date(game.start_time)
             txt += "<div class='schedulerow'>"
-            txt += "<div class='scheduletime'>" + game.start.split(" ")[1].slice(0,5) + "</div>"
+            txt += "<div class='scheduletime'>" + date.toTimeString().substring(0,5) + "</div>"
             txt += "<div class='schedulegame'>" + game.game  + "</div>"
             txt += "<div class='schedulecategory'>" + game.category  + "</div>"
-            txt += "<div class='scheduleplayer'>" + game.player +"</div>"
+            txt += "<div class='scheduleplayer'>" + player +"</div>"
             txt += "<div class='divider'>" + ">" +"</div>"
             txt += "</div>"
         }
@@ -325,14 +327,28 @@ function updateInfo(info) {
         return;
     }
     game = games[info.game];
-    let playerElement = updateField("playername", game.player);
-    checkLongname(playerElement, game.player, 20)
+    var start = new Date(game.start_time)
+    var end = new Date(game.end_time)
+    // TODO: count estimate betterer..
+    var estimate = new Date(end.getTime()-start.getTime())
+    estimate = new Date(estimate.getTime() + estimate.getTimezoneOffset() * 60000)
+    var estimatestring = ""
+    if (estimate.getHours() > 0){
+        estimatestring += String(estimate.getHours()) + "h "
+    }
+    if (estimate.getMinutes() > 0){
+        estimatestring += String(estimate.getMinutes()) + "min"
+    }
+
+    let player = game.player.split(",").join(" & ")
+    let playerElement = updateField("playername", player);
+    checkLongname(playerElement, player, 17)
     let gameElement = updateField("game", game.game);
     checkLongname(gameElement, game.game, 22)
     let categoryElement = updateField("category", game.category);
     checkLongname(categoryElement, game.category, 20)
-    updateField("estimate", game.duration, formatEstimate);
-    updateImage("char", game.image, "https://www.vauhtijuoksu.fi/static/img/gamespecifics/");
+    updateField("estimate", estimatestring, formatEstimate);
+    updateImage("char", game.img_filename, "img/char/");
     updateImage("console", game.device + ".png", "img/consoles/");
     updateField("release", game.year);
     updateSchedule("setupschedule", games, info.game, 4, 0);

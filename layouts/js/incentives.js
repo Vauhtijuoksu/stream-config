@@ -1,4 +1,4 @@
-let incentives_url = "https://vauhtijuoksu.fi/api/incentives";
+let incentives_url = "https://legacy.vauhtijuoksu.fi/api/incentives";
 let incIndex = 0;
 
 const carousel_time = 12000;
@@ -81,7 +81,7 @@ function updateIncentives(incentives) {
                 // Bar is a nice way to show this
                 const barGoal = document.createElement('div');
                 barGoal.classList.add('bargoal');
-                barGoal.textContent = `${goal} e`;
+                barGoal.textContent = `${goal} €`;
 
                 const bar = document.createElement('div');
                 bar.classList.add('bar');
@@ -89,7 +89,7 @@ function updateIncentives(incentives) {
                     bar.classList.add('success');
                 }
                 bar.style = `width:${amount / goal * 100}%;`;
-                bar.textContent = `${amount} e`;
+                bar.textContent = `${ formatMoney(amount) }  €`;
                 div += '<div class="bar-container">';
                 div += barGoal.outerHTML;
                 div += bar.outerHTML;
@@ -113,7 +113,16 @@ function updateIncentives(incentives) {
 function formatOptionsList(options) {
     return '<div class="incentive-options">' + 
         options.slice(0,7).map(
-            option => `<div class="incentive-option">${option.name}: ${option.amount} e</div>`
+            option => `<div class="incentive-option">${option.name}: ${ formatMoney(option.amount)} €</div>`
         ).join('\n') +
         '</div>';
+}
+
+function formatMoney(money) {
+    if (money - parseInt(money) == 0) {
+        return parseInt(money)
+    }
+    else {
+        return money.toFixed(2)
+    }
 }

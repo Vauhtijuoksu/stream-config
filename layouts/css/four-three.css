@@ -3,11 +3,13 @@
     width: 560px;
     bottom: 60px;
 }
-
+.left-top {
+    height: 693px;
+}
 #sponsors {
     padding-top: 10px;
     top: 180px;
-    left: 0;
+    left: 80px;
     right: 0;
     height: 249px;
 }
@@ -53,23 +55,25 @@
 #vauhtijuoksu {
     background-image: url('../img/43vjlogo.png');
     width: 100%;
-    height: 180px;
+    height: 244px;
 }
-
+.spacer{
+    width: 100px;
+}
 #clock{
     height: 132px;
     width: 156px;
-    background-size: 156px;
 }
 #char{
     height: 165px;
     width: 156px;
-    background-size: 156px;
+    top: 80px;
+    left: 10px;
 }
 #console{
     width: 102px;
     height: 100px;
-    background-size: 104px;
+    transform: scale(2);
 }
 .skull{
     width: 64px;
@@ -110,20 +114,17 @@
     top: 429px;
     width: 100%;
     height: 132px;
-    background-color: #272736;
 }
 #gameinfo{
     top: 561px;
     width: 457px;
     height: 132px;
-    background-color: #272736;
 }
 #extrainfo{
     top: 561px;
     right: 0;
     width: 102px;
     height: 132px;
-    background-color: #272736;
 }
 .deathcounter{
     position: relative;

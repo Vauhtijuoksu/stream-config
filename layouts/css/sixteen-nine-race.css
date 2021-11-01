@@ -14,15 +14,20 @@
 #carousel {
     image-rendering: auto;
 }
+
+#vauhtijuoksu{
+    padding: 0 25%;
+}
+
 .bottomleft {
-    border-right: #f2a65e 1px solid;
+    border-right: #18191f 1px solid;
     bottom: 60px;
     height: 308px;
     width: 700px;
     left: 0;
 }
 .bottomright {
-    border-left: #f2a65e 1px solid;
+    border-left: #18191f 1px solid;
     bottom: 60px;
     height: 308px;
     width: 700px;
@@ -69,21 +74,17 @@
 #clock{
     height: 165px;
     width: 156px;
-    background-size: 156px;
 }
 #char{
     height: 100%;
     width: 300px;
-    background-size: 260px;
 }
 #console{
     width: 156px;
     height: 100px;
-    background-size: 156px;
 }
 .skull{
     width: 64px;
-    background-size: 52px;
     height: 40px;
 }
 #estimate{
