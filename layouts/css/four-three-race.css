@@ -120,7 +120,7 @@
 .counter{
     font-size: 32px;
     text-align: center;
-    bottom: 2px;
+    bottom: 0;
     left: 0;
     right: 0;
 }
@@ -166,4 +166,17 @@
 #divider {
     background-color: #322947;
     height: 713px;
+}
+
+#cam_divider {
+    background-image: url(../img/bg.png);
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    border-left: #18191f 1px solid;
+    border-right: #18191f 1px solid;
+    right: 950px;
+    left: 950px;
+    z-index: 100;
+    top: 776px;
+    height: 244px;
 }

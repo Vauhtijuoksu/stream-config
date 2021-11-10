@@ -106,7 +106,7 @@
 .counter{
     font-size: 32px;
     text-align: center;
-    bottom: 2px;
+    bottom: 0;
     left: 0;
     right: 0;
 }

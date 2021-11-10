@@ -1,5 +1,5 @@
 let games_url = "https://api.dev.vauhtijuoksu.fi/gamedata"
-let info_url = "https://legacy.vauhtijuoksu.fi/api/legacy/status";
+let info_url = "https://legacy.vauhtijuoksu.fi/api/stream_metadata";
 let gonator_url = "https://api.dev.vauhtijuoksu.fi/donations";
 
 
@@ -282,7 +282,7 @@ function updateStatus() {
             var info = JSON.parse(xhr.responseText);
             updateInfo(info);
             goal = info.goal;
-            idletexts = info.motds
+            idletexts = info.info
             setTimeout(updateStatus, 2000);
         }
     }
@@ -350,7 +350,7 @@ function updateInfo(info) {
     updateField("estimate", estimatestring, formatEstimate);
     updateImage("char", game.img_filename, "img/char/");
     updateImage("console", game.device + ".png", "img/consoles/");
-    updateField("release", game.year);
+    updateField("release", game.published);
     updateSchedule("setupschedule", games, info.game, 4, 0);
     updateSchedule("schedule", games, info.game, 4, 1);
     updateDeath(1, info.death1);

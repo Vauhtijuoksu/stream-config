@@ -73,6 +73,7 @@
 .skull{
     width: 104px;
     height: 130px;
+    background-size: 104px;
 }
 #estimate{
     font-size: 32px;
@@ -80,10 +81,14 @@
     bottom: 30px;
     right: 20px;
 }
-#game{
+#game {
     text-align: left;
     top: 30px;
     left: 160px;
+    font-size: 34px
+}
+#game.longname {
+    font-size: 32px;
 }
 #category{
     text-align: left;
