@@ -1,5 +1,5 @@
 let games_url = "https://api.dev.vauhtijuoksu.fi/gamedata"
-let info_url = "https://legacy.vauhtijuoksu.fi/api/stream_metadata";
+let info_url = "https://api.dev.vauhtijuoksu.fi/stream-metadata";
 let gonator_url = "https://api.dev.vauhtijuoksu.fi/donations";
 
 
@@ -99,7 +99,7 @@ function updateDonations(gonations) {
 
     for (donation of donations.reverse()) {
         var child = document.createElement('div');
-        var text = document.createTextNode(`${donation.name}:  ${donation.amount}€`);
+        var text = document.createTextNode(`${donation.name}:  ${donation.amount} e`);
         child.appendChild(text);
         child.id = donation.id;
         child.className = 'donation';
@@ -161,7 +161,7 @@ function updateDonationbar(newSum) {
             }
             // console.log(timeout, current, target);
             var sumElement = document.getElementById('sum');
-            sumElement.innerText = `${current}€`
+            sumElement.innerText = `${current} e`
 
             setTimeout(updateCurrent, timeout, target);
         }
@@ -172,12 +172,12 @@ function updateDonationbar(newSum) {
     } else {
         current = newSum;
         var sumElement = document.getElementById('sum');
-        sumElement.innerText = `${current} €`
+        sumElement.innerText = `${current} e`
     }
     
     
     var goalElement = document.getElementById('goal');
-    goalElement.innerText = `${goal} €`
+    goalElement.innerText = `${goal} e`
     var element = document.getElementById('bar-bar');
     var percent = (current / goal) * 100;
     element.style.width = `${percent}%`;
@@ -281,9 +281,9 @@ function updateStatus() {
         if (xhr.readyState == 4) {
             var info = JSON.parse(xhr.responseText);
             updateInfo(info);
-            goal = info.goal;
-            idletexts = info.info
-            setTimeout(updateStatus, 2000);
+            goal = info.donation_goal;
+            idletexts = info.donatebar_info
+            setTimeout(updateStatus, 500);
         }
     }
     xhr.send();
@@ -299,7 +299,7 @@ function checkLongname(element, data, chars) {
     }
 
 }
-function updateSchedule(elementID, games, current, count, offset){
+function updateSchedule(elementID, current, count, offset){
     var element = document.getElementById(elementID);
     if (element){
         var txt = ""
@@ -312,10 +312,18 @@ function updateSchedule(elementID, games, current, count, offset){
             var date = new Date(game.start_time)
             txt += "<div class='schedulerow'>"
             txt += "<div class='scheduletime'>" + date.toTimeString().substring(0,5) + "</div>"
-            txt += "<div class='schedulegame'>" + game.game  + "</div>"
+            txt += "<div class='schedulegame'>" + game.game + "</div>"
             txt += "<div class='schedulecategory'>" + game.category  + "</div>"
             txt += "<div class='scheduleplayer'>" + player +"</div>"
             txt += "<div class='divider'>" + ">" +"</div>"
+            txt += "<div class='warnings'>"
+            if (game["meta"] !== "" && game["meta"] !== null){
+                let meta = game["meta"].split(",")
+                for (let m in meta){
+                    txt += "<div class='warning w-" + meta[m] + "'></div>"
+                }
+            }
+            txt += "</div>"
             txt += "</div>"
         }
         element.innerHTML = txt;
@@ -326,7 +334,29 @@ function updateInfo(info) {
     if (games == null) {
         return;
     }
-    game = games[info.game];
+   // console.log(info)
+    if (info.timers.length > 0){
+        runtimer = info.timers[0] // Only 1 timer currently pls.
+        if (runtimer.start_time != null){
+            timer_start = new Date(runtimer.start_time)
+        } else {
+            timer_start = null
+        }
+        if (runtimer.end_time != null){
+            timer_end = new Date(runtimer.end_time);
+        } else {
+            timer_end = null
+        }
+
+    }
+    let current = 0
+    for (let g in games){
+        if (games[g].id === info.current_game_id){
+            game = games[g]
+            current = parseInt(g)
+            break
+        }
+    }
     var start = new Date(game.start_time)
     var end = new Date(game.end_time)
     // TODO: count estimate betterer..
@@ -342,19 +372,98 @@ function updateInfo(info) {
 
     let player = game.player.split(",").join(" & ")
     let playerElement = updateField("playername", player);
-    checkLongname(playerElement, player, 17)
+    checkLongname(playerElement, player, 13)
     let gameElement = updateField("game", game.game);
-    checkLongname(gameElement, game.game, 22)
+    checkLongname(gameElement, game.game, 20)
     let categoryElement = updateField("category", game.category);
     checkLongname(categoryElement, game.category, 20)
     updateField("estimate", estimatestring, formatEstimate);
     updateImage("char", game.img_filename, "img/char/");
     updateImage("console", game.device + ".png", "img/consoles/");
     updateField("release", game.published);
-    updateSchedule("setupschedule", games, info.game, 4, 0);
-    updateSchedule("schedule", games, info.game, 4, 1);
-    updateDeath(1, info.death1);
-    updateDeath(2, info.death2);
-    updateDeath(3, info.death3);
-    updateDeath(4, info.death4);
+    updateSchedule("setupschedule", current, 4, 0);
+    updateSchedule("schedule", current, 4, 1);
+    updateDeath(1, info.counters[0]);
+    updateDeath(2, info.counters[1]);
+    updateDeath(3, info.counters[2]);
+    updateDeath(4, info.counters[3]);
+}
+
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
+docReady(function() {
+    make_timer()
+});
+
+let timer_start = null   // Date.now()
+let timer_end = null
+
+function make_timer(){
+    let timer = "<div id='timer'>"
+    timer += "<div id='t-h1' class='num'></div><div id='t-h2' class='num'>0</div><div>:</div>"
+    timer += "<div id='t-m1' class='num'>0</div><div id='t-m2' class='num'>0</div><div>:</div>"
+    timer += "<div id='t-s1' class='num'>0</div><div id='t-s2' class='num'>0</div><div class='smallnum'>.</div>"
+    timer += "<div id='t-ms1' class='num smallnum'>0</div><div id='t-ms2' class='num smallnum'>0</div>"
+    timer += "</div>"
+    var element = document.getElementById("time");
+    if (element !== null){
+        element.innerHTML += timer;
+        setInterval(update_time, 10)
+    }
+}
+
+function update_time(){
+    let time_now = 0
+    let h1 = 0
+    let h2 = 0
+    let m1 = 0
+    let m2 = 0
+    let s1 = 0
+    let s2 = 0
+    let ms1 = 0
+    let ms2 = 0
+
+    if (timer_start !== null){
+        if (timer_end === null) {
+            let now = Date.now()
+            time_now = (now - timer_start) / 1000
+        } else {
+            time_now = (timer_end - timer_start) / 1000
+        }
+        let remain = time_now
+        let hours = Math.floor(remain / (60 * 60))
+        remain -= hours * 60 * 60
+        let minutes = Math.floor(remain / (60))
+        remain -= minutes * 60
+        let seconds = Math.floor(remain)
+        remain -= seconds
+        remain = Math.floor(remain * 100)
+        h1 = Math.floor(hours / 10)
+        h2 = hours % 10
+        m1 = Math.floor(minutes / 10)
+        m2 = minutes % 10
+        s1 = Math.floor(seconds / 10)
+        s2 = seconds % 10
+        ms1 = Math.floor(remain / 10)
+        ms2 = remain % 10
+    }
+    if (h1 > 0){
+        document.getElementById("t-h1").innerHTML = h1
+    } else {
+        document.getElementById("t-h1").innerHTML = ""
+    }
+    document.getElementById("t-h2").innerHTML = h2
+    document.getElementById("t-m1").innerHTML = m1
+    document.getElementById("t-m2").innerHTML = m2
+    document.getElementById("t-s1").innerHTML = s1
+    document.getElementById("t-s2").innerHTML = s2
+    document.getElementById("t-ms1").innerHTML = ms1
+    document.getElementById("t-ms2").innerHTML = ms2
 }

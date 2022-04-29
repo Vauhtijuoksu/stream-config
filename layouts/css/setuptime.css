@@ -1,15 +1,12 @@
 
 #sponsors {
-    background-image: url('../img/bg.png');
-    background-position: top center;
-    background-attachment: fixed;
-    background-repeat: repeat-x;
+    background-image: url('../img/ruinBG.png');
+    background-position: top left;
     padding-top: 10px;
-    height: 320px;
+    height: 316px;
     left: 960px;
     bottom: 60px;
     right: 0;
-    border-top: #18191f 1px solid;
 }
 
 #sponsors > #carousel {
@@ -17,15 +14,22 @@
     padding-left: 100px;
     padding-right: 100px;
 }
+#vauhtijuoksu {
+    height: 224px;
+    background-position: right -128px;
+}
+.textlogo{
+    margin: 50px auto;
+    height: 82px;
+}
 
 .left{
     width: 961px;
     bottom: 0;
     text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
-    background-image: url('../img/bg.png');
-    background-position: top center;
-    background-attachment: fixed;
-    background-repeat: repeat-x;
+    background-image: url('../img/leftbg.png');
+    background-position: right top;
+    background-repeat: repeat-y;
 }
 
 .longheader{
@@ -36,7 +40,7 @@
     right: 10px;
     top: 200px;
     height: 480px;
-    font-size: 36px;
+    font-size: 32px;
     z-index: 100000;
 }
 .incentives{
@@ -58,6 +62,8 @@
     position: relative;
 }
 .incentive {
+    padding-top: 30px;
+    padding-bottom: 20px;
     height: 100%;
     width: 100%;
     display: flex;
@@ -68,11 +74,11 @@
 }
 
 .incentive-game {
-    font-size: 64px;
+    font-size: 48px;
 }
 
 .incentive-title {
-    font-size: 48px;
+    font-size: 32px;
 }
 
 .incentive-options {
@@ -95,12 +101,12 @@
     box-sizing: border-box;
     margin: 0 6px;
     flex-shrink: 0;
-    border: 1px solid #da9f8a;
-    background-color: #9d6e68;
+    border: 1px solid #556e94;
+    background-color: #27395b;
 }
 .incentive-option:nth-child(odd) {
-    border-color: #e988cf;
-    background-color: #a34ea7;
+    border-color: #219580;
+    background-color: #22746b;
 }
 
 .bar-container {
@@ -111,7 +117,7 @@
 }
 
 .bar{
-    background-color: #2b8d38;
+    background-color: #22746b;
     border-radius: 5px;
     height: 50px;
     white-space: nowrap;
@@ -130,7 +136,7 @@
     padding-right: 13px;
     box-sizing: border-box;
     margin-bottom: -50px;
-    border: 1px solid #1f5e3f;
+    border: 1px solid #219580;
     border-radius: 3px;
 }
 
@@ -196,22 +202,22 @@ div.half:last-child {
     position: absolute;
     text-align: left;
     left: 220px;
-    top: 0;
-    height: 48px;
-    font-size: 42px;
+    top: 5px;
+    height: 42px;
+    font-size: 30px;
 }
 #setupschedule .schedulecategory {
     position: absolute;
     text-align: left;
     left: 220px;
-    top: 38px;
-    font-size: 28px;
+    top: 34px;
+    font-size: 26px;
 }
 #setupschedule .scheduleplayer {
     position: absolute;
     text-align: left;
     left: 220px;
-    top: 64px;
+    top: 60px;
     font-size: 32px;
 }
 #setupschedule .divider {
@@ -236,4 +242,7 @@ div.half:last-child {
     vertical-align: top;
     margin-left: 20px;
     margin-top: -35px;
+}
+.warnings{
+    display: flex;
 }

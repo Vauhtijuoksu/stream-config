@@ -4,16 +4,16 @@
     position: absolute;
     text-align: left;
     padding-top: 20px;
-    top: 0px;
+    top: 50px;
     bottom: 0;
-    right: 0;
-    width: 540px;
+    right: 0px;
+    width: 480px;
 }
 #carousel {
     position: absolute;
     image-rendering: auto;
     left: auto;
-    top: 0px;
+    top: -40px;
     bottom: 0;
     right: 10px;
     width: 250px;
@@ -28,8 +28,8 @@
     right: 0;
 }
 .bottom {
-    bottom: 60px;
-    height: 140px;
+    bottom: 65px;
+    height: 160px;
     left: 0;
     right: 0;
 }

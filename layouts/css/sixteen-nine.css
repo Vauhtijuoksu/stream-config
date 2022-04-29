@@ -1,7 +1,7 @@
 /* Left side bar */
 .left {
     width: 400px;
-    bottom: 60px;
+    bottom: 65px;
 }
 
 #sponsors {
@@ -13,13 +13,20 @@
 }
 #player {
     font-size: 32pt;
-    top: 628px;
+    top: 631px;
 }
 
 #playername.longname {
     font-size: 40px;
 }
-
+#cam_divider{
+    height: 288px;
+}
+#cam-area{
+    width: 368px;
+    height: 288px;
+    bottom: 0px;
+}
 .bottom {
     bottom: 60px;
     height: 165px;
@@ -36,21 +43,16 @@
 }
 
 
-#vauhtijuoksu {
-    background-image: url('../img/169vjlogo.png');
-    width: 100%;
-    height: 244px;
-}
-
 #clock{
     height: 165px;
     width: 156px;
 }
 #char{
-    height: 165px;
-    width: 156px;
-    left: -10px;
-    transform: scale(2);
+    height: 48px;
+    width: 48px;
+    transform: scale(4);
+    left: 50px;
+    top: 72px
 }
 #console{
     width: 156px;
@@ -61,10 +63,9 @@
     background-size: 104px;
 }
 #estimate{
-    font-size: 32px;
     text-align: right;
     bottom: 30px;
-    right: 20px;
+    right: 10px;
 }
 #game{
     text-align: left;
@@ -109,4 +110,8 @@
     position: relative;
     height: 100%;
     width: 104px;
+}
+#timer{
+    right: 10px;
+    top: 40px;
 }

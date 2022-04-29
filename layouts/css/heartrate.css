@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'orangekid';
-    src:  url('./orangekid.ttf') format('truetype');
+    font-family: 'MisterPixel';
+    src:  url('./MisterPixelRegular.otf') format('truetype');
 }
 @font-face {
-    font-family: 'lunchds';
-    src:  url('./lunchds.ttf') format('truetype');
+    font-family: 'Alagard';
+    src:  url('./Alagardplus.ttf') format('truetype');
 }
 
 
@@ -12,7 +12,7 @@ html, body {
     background-color: transparent;
     margin: 0;
     padding: 0;
-    font-family: 'orangekid';
+    font-family: 'MisterPixel';
     color: #fcfefe;
     text-align: center;
     image-rendering: pixelated;
@@ -32,7 +32,7 @@ div {
 #rate{
     height: 52px;
     font-size: 14px;
-    line-height: 45px;
+    line-height: 49px;
     width: 52px;
     position: absolute;
     left: -2px;

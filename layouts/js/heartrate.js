@@ -1,27 +1,20 @@
-let sensors_root = "http://vauhtisraspi.local:8000/"
+let info_url = "https://api.dev.vauhtijuoksu.fi/stream-metadata"
 
 let rate = 0
 let sensor = 1
 let heart
 let fails = 0
 
+
+
 function getRate() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", sensors_root + "sensor" + sensor.toString() + ".txt");
+    xhr.open("GET", info_url);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
-            let response = xhr.responseText;
-            if (response){
-                rate = parseInt(response)
-                ratetxt.textContent = rate
-                fails = 0
-            } else {
-                fails += 1
-                if (fails > 10){
-                    ratetxt.textContent = ""
-                    rate = 0
-                }
-            }
+            var info = JSON.parse(xhr.responseText);
+            rate = info.heart_rates[sensor-1]
+            ratetxt.textContent = rate
             setTimeout(getRate, 1000);
         }
     }

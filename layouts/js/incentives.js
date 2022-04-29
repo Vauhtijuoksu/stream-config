@@ -1,9 +1,22 @@
-let incentives_url = "https://legacy.vauhtijuoksu.fi/api/incentives";
+let incentives_url = "https://api.dev.vauhtijuoksu.fi/incentives";
 let incIndex = 0;
 
 const carousel_time = 12000;
 // uncomment to use test data.
 //incentives_url = "js/test.json";
+let igames
+getiGames()
+function getiGames() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", games_url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            igames = JSON.parse(xhr.responseText);
+        }
+    }
+    xhr.send();
+}
+
 function initIncentives() {
     getIncentives((incentives) => {
         updateIncentives(incentives);
@@ -46,60 +59,48 @@ function getIncentives(callback) {
 
 function updateIncentives(incentives) {
     var html = "";
-    for (const i in incentives.incentives){
-        const incentive = incentives.incentives[i];
-        if (incentive.endtime.endsWith('GMT')) {
-            incentive.endtime += '+0300';
+    for (const i in incentives){
+        const incentive = incentives[i];
+        if (incentive.end_time.endsWith('GMT')) {
+            incentive.end_time += '+0300';
         }
-        if (new Date(incentive.endtime) > Date.now()) {
+        if (new Date(incentive.end_time) > Date.now()) {
             var id = incentive.id.toString();
             var div = "";
-            div += `<div class="incentive-game">${incentive.game}</div>`;
+            let gamename = ""
+            for (let g in igames){
+                if (igames[g].id === incentive.game_id){
+                    gamename = igames[g].game
+                    break
+                }
+            }
+            div += `<div class="incentive-game">${gamename}</div>`;
             div += `<div class="incentive-title">${incentive.title}</div>`;
 
             if (incentive.type === "option"){
-                const options = incentive.parameters.split('/').map(
-                    (option, index) => {
-                        const num = (index + 1).toString();
-                        let amount = 0;
-                        if (incentives.amount[id] && incentives.amount[id][num]) {
-                            amount = incentives.amount[id][num];
-                        }
-                        return {name: option, amount: amount};
-                    }
-                ).sort(function(a,b){return b.amount - a.amount;});
 
-                // Just list the options and their amounts here
-                div += formatOptionsList(options);
-            } else if (incentive.type === "upgrade") {
-                let amount = 0
-                const goal = parseFloat(incentive.parameters);
-                if (incentives.amount[id] && incentives.amount[id][null]) {
-                    amount = incentives.amount[id][null];
-                }
-
+                div += formatOptionsList(incentive.status);
+            } else if (incentive.type === "milestone") {
+                let amount = incentive.total_amount
+                const goal = parseFloat(incentive.milestones[0]); // TODO: fix for using multiple milestones
                 // Bar is a nice way to show this
                 const barGoal = document.createElement('div');
                 barGoal.classList.add('bargoal');
-                barGoal.textContent = `${goal} €`;
-
+                barGoal.textContent = `${goal} e`;
                 const bar = document.createElement('div');
                 bar.classList.add('bar');
                 if (amount >= goal){
                     bar.classList.add('success');
                 }
                 bar.style = `width:${amount / goal * 100}%;`;
-                bar.textContent = `${ formatMoney(amount) }  €`;
+                bar.textContent = `${ formatMoney(amount) }  e`;
                 div += '<div class="bar-container">';
                 div += barGoal.outerHTML;
                 div += bar.outerHTML;
                 div += '</div>';
             } else if (incentive.type === "open") {
-
-                if (incentives.amount[id]) {
-                    let options = Object.entries(incentives.amount[id]).map(o => ({name: o[0], amount: o[1]}));
-                    options.sort(function(a,b){return b.amount - a.amount;});
-                    div += formatOptionsList(options);
+                if (incentive.status.length > 0) {
+                    div += formatOptionsList(incentive.status);
                 } else {
                     div += 'Tälle kannustimelle ei ole vielä ehdotuksia!'
                 }
@@ -111,9 +112,10 @@ function updateIncentives(incentives) {
 }
 
 function formatOptionsList(options) {
+    options.sort(function(a,b){return b.amount - a.amount;})
     return '<div class="incentive-options">' + 
         options.slice(0,7).map(
-            option => `<div class="incentive-option">${option.name}: ${ formatMoney(option.amount)} €</div>`
+            option => `<div class="incentive-option">${option.option}: ${ formatMoney(option.amount)} e</div>`
         ).join('\n') +
         '</div>';
 }

@@ -3,7 +3,9 @@
     width: 560px;
     bottom: 60px;
 }
-
+.textlogo{
+    margin-top: 32px;
+}
 #sponsors {
     position: absolute;
     right: 0;
@@ -20,17 +22,19 @@
 }
 
 .bottomleft {
-    border-right: #18191f 1px solid;
-    bottom: 60px;
-    height: 308px;
-    width: 700px;
+    bottom: 65px;
+    height: 321px;
+    width: 720px;
+    background-image: url('../img/leftbg.png');
+    background-position: -48px -160px;
     left: 0;
 }
 .bottomright {
-    border-left: #18191f 1px solid;
-    bottom: 60px;
-    height: 308px;
-    width: 700px;
+    bottom: 65px;
+    height: 321px;
+    width: 720px;
+    background-image: url('../img/leftbg.png');
+    background-position: -32px top;
     right: 0;
 }
 #info {
@@ -59,9 +63,9 @@
 
 #player {
     font-size: 32pt;
-    bottom: 304px;
-    left: 700px;
-    right: 700px;
+    bottom: 290px;
+    left: 720px;
+    right: 720px;
 }
 
 
@@ -76,8 +80,9 @@
     width: 156px;
 }
 #char{
-    height: 100%;
-    width: 300px;
+    height: 380px;
+    width: 320px;
+    transform: scale(6);
 }
 #console{
     width: 156px;
@@ -85,10 +90,12 @@
 }
 .skull{
     width: 64px;
-    height: 40px;
+    background-size: 104px;
+    background-position: center -20px;
+    height: 104px;
 }
 #estimate{
-    font-size: 32px;
+    font-size: 24px;
     text-align: right;
     bottom: 20px;
     right: 30px;
@@ -157,8 +164,7 @@
     float: right;
 }
 #divider {
-    top: 178px;
-    background-color: #272736;
+    top: 160px;
     height: 534px;
 }
 #cam_divider {
@@ -172,5 +178,10 @@
     z-index: 100;
     top: 776px;
     height: 244px;
+}
+
+#timer{
+    right: 200px;
+    top: 40px;
 }
 
