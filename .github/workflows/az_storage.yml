@@ -1,7 +1,7 @@
 name: Blob storage upload
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   push:
     branches:
     - master
