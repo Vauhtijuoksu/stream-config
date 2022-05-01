@@ -20,7 +20,7 @@ jobs:
         AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_KEY }}
       with:
         inlineScript: |
-          az storage blob upload-batch --auth-mode login --destination "$web" --source .
+          az storage blob upload-batch --auth-mode key --destination "$web" --source .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
