@@ -17,10 +17,10 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       env:
-        AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_KEY }}
+        AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
       with:
         inlineScript: |
-          az storage blob upload-batch --auth-mode login --destination "$web" --source .
+          az storage blob upload-batch --account-name vjconfig --auth-mode key -d '$web' -s .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
