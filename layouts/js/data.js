@@ -437,6 +437,9 @@ function update_time(){
         } else {
             time_now = (timer_end - timer_start) / 1000
         }
+        if (time_now < 0){
+            time_now = 0
+        }
         let remain = time_now
         let hours = Math.floor(remain / (60 * 60))
         remain -= hours * 60 * 60
