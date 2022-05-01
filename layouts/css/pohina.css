@@ -1,0 +1,40 @@
+
+
+#sponsors {
+    position: absolute;
+    text-align: left;
+    padding-top: 20px;
+    top: 50px;
+    bottom: 0;
+    right: 0px;
+    width: 480px;
+}
+#carousel {
+    position: absolute;
+    image-rendering: auto;
+    left: auto;
+    top: -40px;
+    bottom: 0;
+    right: 10px;
+    width: 250px;
+}
+
+#overlay {
+    background-image: url('../img/pohinaoverlay.png');
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    bottom: 60px;
+    right: 0;
+}
+.bottom {
+    bottom: 65px;
+    height: 160px;
+    left: 0;
+    right: 0;
+}
+
+#divider {
+    height: 881px;
+    z-index: -1;
+}

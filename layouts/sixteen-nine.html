@@ -1,31 +1,79 @@
 <html>
+<meta charset="UTF-8">
 <head>
-  <link rel="stylesheet" type="text/css" href="css/base.css">
-  <link rel="stylesheet" type="text/css" href="css/sixteen-nine.css">
-  <script src="js/data.js"></script>
-  <script src="js/carousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/sixteen-nine.css">
+    <script src="js/data.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/incentives.js"></script>
 </head>
-<body onload="getGames(); initCarousel();">
-  <div id="canvas">
+<body onload="getGames(); initCarousel(); initIncentives();">
+<div id="canvas">
     <div class="screen"></div>
     <div class="left">
-      <div id="sponsors">
-      </div>
-      <div id="player"></div>
+        <div class="left-top">
+            <div id="vauhtijuoksu">
+                <img class="textlogo" src="img/textlogo.png">
+            </div>
+            <div id="sponsors">
+                Yhteistyössä:
+                <div id="carousel">
+                </div>
+            </div>
+        </div>
+        <div id="player">
+            <div id="playername">
+
+            </div>
+        </div>
+        <div id="cam_divider"></div>
+        <div id="cam-area">
+            <div class="cam-bottom"></div>
+        </div>
     </div>
     <div class="bottom">
-      <div id="info">
-        <div>
-          <div id="game"></div>
-          <div id="category"></div>
+        <div id="time">
+            <div id="clock"></div>
+            <div id="estimate"></div>
         </div>
-        <div>
-          <div id="console"></div>
-          <div id="estimate"></div>
+        <div id="gameinfo">
+            <div id="char"></div>
+            <div id="game"></div>
+            <div id="category"></div>
         </div>
-      </div>
+        <div id="extrainfo">
+            <div id="console"></div>
+            <div id="release"></div>
+        </div>
+        <div id="deathcounter1" class="deathcounter">
+            <div class="skull"></div>
+            <div class="counter"></div>
+        </div>
+        <div id="deathcounter2" class="deathcounter">
+            <div class="skull"></div>
+            <div class="counter"></div>
+        </div>
+        <div id="deathcounter3" class="deathcounter">
+            <div class="skull"></div>
+            <div class="counter"></div>
+        </div>
+        <div id="deathcounter4" class="deathcounter">
+            <div class="skull"></div>
+            <div class="counter"></div>
+        </div>
     </div>
-    <div class="donations"></div>
-  </div>
+    <div class="donations">
+        <div id="sum" class="money"></div>
+        <div id="activity">
+            <div id="activities" class="activity-slide current" data-slidetime="16000"></div>
+            <div id="incentives" class="activity-slide next" data-slidetime="16000"></div>
+            <div id="schedule" class="activity-slide previous" data-slidetime="16000"></div>
+        </div>
+        <div id="bar">
+            <div id="bar-bar"></div>
+        </div>
+        <div id="goal" class="money"></div>
+    </div>
+</div>
 </body>
 </html>

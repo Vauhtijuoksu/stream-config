@@ -1,0 +1,187 @@
+
+.left {
+    width: 560px;
+    bottom: 60px;
+}
+.textlogo{
+    margin-top: 32px;
+}
+#sponsors {
+    position: absolute;
+    right: 0;
+    padding-top: 10px;
+    width: 400px;
+    height: 100%;
+}
+#carousel {
+    image-rendering: auto;
+}
+
+#vauhtijuoksu{
+    padding: 0 25%;
+}
+
+.bottomleft {
+    bottom: 65px;
+    height: 321px;
+    width: 720px;
+    background-image: url('../img/leftbg.png');
+    background-position: -48px -160px;
+    left: 0;
+}
+.bottomright {
+    bottom: 65px;
+    height: 321px;
+    width: 720px;
+    background-image: url('../img/leftbg.png');
+    background-position: -32px top;
+    right: 0;
+}
+#info {
+    top: 430px;
+    left: 80px;
+    right: 14px;
+    height: 132px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    font-size: 18pt;
+    padding-bottom: 5px;
+}
+
+/* Rows within info box */
+#info>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+
+#player {
+    font-size: 32pt;
+    bottom: 290px;
+    left: 720px;
+    right: 720px;
+}
+
+
+.screen {
+    width: 1920px;
+    height: 712px;
+}
+
+
+#clock{
+    height: 165px;
+    width: 156px;
+}
+#char{
+    height: 380px;
+    width: 320px;
+    transform: scale(6);
+}
+#console{
+    width: 156px;
+    height: 100px;
+}
+.skull{
+    width: 64px;
+    background-size: 104px;
+    background-position: center -20px;
+    height: 104px;
+}
+#estimate{
+    font-size: 24px;
+    text-align: right;
+    bottom: 20px;
+    right: 30px;
+}
+#game{
+    text-align: left;
+    top: 10px;
+    left: 30px;
+}
+#category{
+    text-align: left;
+    bottom: 20px;
+    left: 30px;
+}
+#release{
+    font-size: 32px;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+.counter{
+    font-size: 32px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#time {
+    position: absolute;
+    width: 100%;
+    height: 152px;
+}
+#gameinfo {
+    position: absolute;
+    bottom: 0;
+    width: 550px;
+    height: 152px;
+}
+#extrainfo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 156px;
+    height: 152px;
+}
+.deathcounter{
+    position: relative;
+    height: 100%;
+    width: 64px;
+}
+#deathcounter1 {
+    position: relative;
+    float: left;
+}
+#deathcounter2 {
+    position: relative;
+    float: right;
+}
+#deathcounter3 {
+    position: relative;
+    float: left;
+}
+#deathcounter4  {
+    position: relative;
+    float: right;
+}
+#divider {
+    top: 160px;
+    height: 534px;
+}
+#cam_divider {
+    background-image: url(../img/bg.png);
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    border-left: #18191f 1px solid;
+    border-right: #18191f 1px solid;
+    right: 950px;
+    left: 950px;
+    z-index: 100;
+    top: 776px;
+    height: 244px;
+}
+
+#timer{
+    right: 200px;
+    top: 40px;
+}
+

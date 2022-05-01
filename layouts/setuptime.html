@@ -1,0 +1,50 @@
+<html>
+<meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/setuptime.css">
+    <script src="js/data.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/incentives.js"></script>
+</head>
+<body onload="getGames(); initCarousel(); initIncentives();">
+<div id="canvas">
+
+    <div class="longheader">
+        <div id="vauhtijuoksu">
+                <img class="textlogo" src="img/textlogoline.png">
+
+        </div>
+    </div>
+    <div class="left">
+        <div class="schedule">
+            <div class="header-txt">Seuraavaksi tulossa:</div>
+            <div id="setupschedule"></div>
+            Tapahtuman aikataulu osoitteessa vauhtijuoksu.fi/aikataulu
+        </div>
+        <div class="incentives">
+            <div class="header-txt">Kannustimien tilanne:</div>
+            <div id="incentives"></div>
+            vauhtijuoksu.fi/kannustimet
+        </div>
+    </div>
+    <div id="sponsors">
+        Yhteistyössä:
+        <div id="carousel">
+        </div>
+    </div>
+    <div class="donations">
+
+        <div id="sum" class="money"></div>
+        <div id="activity">
+            <div id="activities" class="activity-slide" data-slidetime="6000"></div>
+        </div>
+        <div id="bar">
+            <div id="bar-bar"></div>
+        </div>
+        <div id="goal" class="money"></div>
+
+    </div>
+</div>
+</body>
+</html>

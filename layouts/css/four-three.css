@@ -1,19 +1,23 @@
-#canvas {
-    background-image: url('../img/layout43.png');
-}
 
 .left {
-    width: 560px;
-    bottom: 60px;
+    width: 567px;
+    bottom: 65px;
 }
-
+.left-top {
+    height: 660px;
+}
 #sponsors {
-    top: 120px;
-    left: 14px;
-    right: 14px;
-    height: 290px;
+    padding-top: 20px;
+    top: 155px;
+    left: 95px;
+    right: 0;
+    height: 260px;
 }
-
+#carousel {
+    image-rendering: auto;
+    left: 100px;
+    right: 100px;
+}
 #info {
     top: 430px;
     left: 80px;
@@ -37,19 +41,117 @@
     align-items: baseline;
 }
 
-#game {
-    font-size: 22pt;
-}
 
 #player {
     font-size: 32pt;
-    bottom: 263px;
-    height: 50px;
-    left: 100px;
-    right: 103px;
+    bottom: 268px;
 }
-
+#cam_divider{
+    height: 268px;
+}
+#cam-area{
+    width: 535px;
+    height: 268px;
+    bottom: 0px;
+}
 .screen {
     width: 1360px;
     height: 1020px;
+}
+
+.spacer{
+    width: 100px;
+}
+#clock{
+    height: 132px;
+    width: 156px;
+}
+#char{
+    transform: scale(4);
+    height: 165px;
+    width: 156px;
+    top: 64px;
+    left: 0px;
+}
+.textlogo{
+    top: 50px;
+    left: 140px;
+
+    position: absolute;
+}
+#console{
+    width: 102px;
+    height: 100px;
+    transform: scale(2);
+}
+.skull{
+    width: 64px;
+    background-size: 104px;
+    background-position: center -20px;
+    height: 104px;
+}
+#estimate{
+    bottom: 10px;
+    left: 140px;
+}
+#game{
+    text-align: left;
+    top: 10px;
+    left: 30px;
+}
+#category{
+    text-align: left;
+    bottom: 20px;
+    left: 30px;
+}
+#release{
+    font-size: 32px;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+.counter{
+    font-size: 32px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#time {
+    top: 400px;
+    width: 100%;
+    height: 132px;
+}
+#gameinfo{
+    top: 531px;
+    width: 457px;
+    height: 132px;
+}
+#extrainfo{
+    top: 531px;
+    right: 10px;
+    width: 102px;
+    height: 132px;
+}
+.deathcounter{
+    position: relative;
+    height: 100%;
+    width: 64px;
+}
+#deathcounter1 {
+    position: relative;
+    float: left;
+}
+#deathcounter2 {
+    position: relative;
+    float: right;
+}
+#deathcounter3 {
+    position: relative;
+    float: left;
+}
+#deathcounter4  {
+    position: relative;
+    float: right;
 }

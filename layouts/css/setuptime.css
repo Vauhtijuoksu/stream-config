@@ -1,0 +1,248 @@
+
+#sponsors {
+    background-image: url('../img/ruinBG.png');
+    background-position: top left;
+    padding-top: 10px;
+    height: 316px;
+    left: 960px;
+    bottom: 60px;
+    right: 0;
+}
+
+#sponsors > #carousel {
+    bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#vauhtijuoksu {
+    height: 224px;
+    background-position: right -128px;
+}
+.textlogo{
+    margin: 50px auto;
+    height: 82px;
+}
+
+.left{
+    width: 961px;
+    bottom: 0;
+    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    background-image: url('../img/leftbg.png');
+    background-position: right top;
+    background-repeat: repeat-y;
+}
+
+.longheader{
+    right: 50%;
+}
+.schedule{
+    left: 10px;
+    right: 10px;
+    top: 200px;
+    height: 480px;
+    font-size: 32px;
+    z-index: 100000;
+}
+.incentives{
+    position: relative;
+    left: 10px;
+    right: 10px;
+    top: 720px;
+    height: 210px;
+    font-size: 36px;
+}
+#incentives {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+#incentives div {
+    position: relative;
+}
+.incentive {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.incentive-game {
+    font-size: 48px;
+}
+
+.incentive-title {
+    font-size: 32px;
+}
+
+.incentive-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    padding: 0 -10px;
+    max-width: 100%;
+}
+
+.incentive-option {
+    height: 50px;
+    line-height: 50px;
+    font-size: 32px;
+    border-radius: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    margin: 0 6px;
+    flex-shrink: 0;
+    border: 1px solid #556e94;
+    background-color: #27395b;
+}
+.incentive-option:nth-child(odd) {
+    border-color: #219580;
+    background-color: #22746b;
+}
+
+.bar-container {
+    width: 100%;
+    font-size: 32px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.bar{
+    background-color: #22746b;
+    border-radius: 5px;
+    height: 50px;
+    white-space: nowrap;
+    padding-left: 13px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 50px;
+}
+
+.bargoal{
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: right;
+    padding-right: 13px;
+    box-sizing: border-box;
+    margin-bottom: -50px;
+    border: 1px solid #219580;
+    border-radius: 3px;
+}
+
+#info {
+    top: 750px;
+    left: 1020px;
+    width: 870px;
+    height: 200px;
+    font-size: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+#info>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+div.half {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+div.half:first-child {
+    text-align: right;
+    padding-right: 30px;
+}
+
+div.half:last-child {
+    text-align: left;
+    padding-left: 30px;
+}
+
+#setupschedule {
+    margin-top: 60px;
+    position: relative;
+    height:400px;
+}
+#setupschedule .schedulerow {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 90px;
+    margin-top: 9px;
+    margin-bottom: 10px;
+}
+#setupschedule .scheduletime {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    text-align: right;
+    font-size: 86px;
+}
+#setupschedule .schedulegame {
+    position: absolute;
+    text-align: left;
+    left: 220px;
+    top: 5px;
+    height: 42px;
+    font-size: 30px;
+}
+#setupschedule .schedulecategory {
+    position: absolute;
+    text-align: left;
+    left: 220px;
+    top: 34px;
+    font-size: 26px;
+}
+#setupschedule .scheduleplayer {
+    position: absolute;
+    text-align: left;
+    left: 220px;
+    top: 60px;
+    font-size: 32px;
+}
+#setupschedule .divider {
+    display: none;
+}
+.header-txt{
+    font-size: 48px;
+}
+
+.deerboy{
+    position: absolute;
+    top: 665px;
+    right: 10px;
+    width: 400px;
+    text-align: right;
+    font-size: 32px;
+    vertical-align: top;
+    z-index: 100;
+}
+.deerboy > img {
+    text-align: right;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: -35px;
+}
+.warnings{
+    display: flex;
+}

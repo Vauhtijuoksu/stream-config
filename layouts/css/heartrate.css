@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'MisterPixel';
+    src:  url('./MisterPixelRegular.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Alagard';
+    src:  url('./Alagardplus.ttf') format('truetype');
+}
+
+
+html, body {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-family: 'MisterPixel';
+    color: #fcfefe;
+    text-align: center;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.heart{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#rate{
+    height: 52px;
+    font-size: 14px;
+    line-height: 49px;
+    width: 52px;
+    position: absolute;
+    left: -2px;
+    top: 0;
+    text-shadow:  0 0 2px #18191f, 0 0 2px #18191f;
+}
+.container{
+    height: 52px;
+    width: 52px;
+    position: absolute;
+    left: 26px;
+    top: 26px;
+    transform: scale(3);
+}

@@ -5,7 +5,7 @@ function initCarousel() {
     xhr.open("GET", "carousel.html");
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
-            document.getElementById("sponsors").innerHTML = xhr.responseText;
+            document.getElementById("carousel").innerHTML = xhr.responseText;
             carousel();
         }
     }
@@ -13,14 +13,14 @@ function initCarousel() {
 }
 
 function carousel() {
-    var slides = document.getElementById("sponsors").children;
+    const slides = document.getElementById("carousel").children;
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
-    var slide = slides[slideIndex-1]
+    const slide = slides[slideIndex-1]
     slide.style.display = "block";
-    var time = slide.dataset.slidetime * 1000;
+    const time = slide.dataset.slidetime * 1000;
     setTimeout(carousel, time);
 }
