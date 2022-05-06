@@ -312,7 +312,12 @@ function updateSchedule(elementID, current, count, offset){
             var date = new Date(game.start_time)
             txt += "<div class='schedulerow'>"
             txt += "<div class='scheduletime'>" + date.toTimeString().substring(0,5) + "</div>"
-            txt += "<div class='schedulegame'>" + game.game + "</div>"
+            if (game.game.length > 40) {
+                txt += "<div class='schedulegamelong'>" + game.game + "</div>"
+            }
+            else {
+                txt += "<div class='schedulegame'>" + game.game + "</div>"
+            }
             txt += "<div class='schedulecategory'>" + game.category  + "</div>"
             txt += "<div class='scheduleplayer'>" + player +"</div>"
             txt += "<div class='divider'>" + ">" +"</div>"
