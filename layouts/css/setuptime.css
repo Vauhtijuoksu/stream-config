@@ -202,9 +202,17 @@ div.half:last-child {
     position: absolute;
     text-align: left;
     left: 220px;
+    top: 4px;
+    height: 42px;
+    font-size: 34px;
+}
+#setupschedule .schedulegamelong {
+    position: absolute;
+    text-align: left;
+    left: 220px;
     top: 5px;
     height: 42px;
-    font-size: 30px;
+    font-size: 26px;
 }
 #setupschedule .schedulecategory {
     position: absolute;
