@@ -1,14 +1,33 @@
 
 #sponsors {
-    background-image: url('../img/ruinBG.png');
-    background-position: top left;
     padding-top: 10px;
+    height: 316px;
+    left: 966px;
+    bottom: 60px;
+    right: 0;
+}
+
+#side_event_info {
+    width: 100%;
+    top: 20px;
+    bottom: 20px;
+    left: 0;
+    flex-direction: row;
+    font-size: 26px;
+}
+.vauhtissvg{
+    width: 300px;
+}
+.bonusteksti{
+    padding-top: 20px;
+}
+#right {
+    position: absolute;
     height: 316px;
     left: 960px;
     bottom: 60px;
     right: 0;
 }
-
 #sponsors > #carousel {
     bottom: 10px;
     padding-left: 100px;
@@ -26,7 +45,7 @@
 .left{
     width: 961px;
     bottom: 0;
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
     background-image: url('../img/leftbg.png');
     background-position: right top;
     background-repeat: repeat-y;

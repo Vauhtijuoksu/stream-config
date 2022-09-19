@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="106.92856mm" height="92.602493mm" viewBox="0 0 106.92856 92.602493"
+	 enable-background="new -8.885 -8.886 961.452 958.452" xml:space="preserve"
+     id="vauhtislogo">
+  <g
+     id="layer1"
+     transform="translate(-0.39473918,-1.640412)">
+    <path id="border" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"
+       d="M 3.8590776,3.640412 H 103.85919 l -8.750009,15.1553 h -24.9999 l -16.2501,28.146096 h -7.500003 l 7.500003,12.9904 20.0001,-34.641296 h 17.4999 l -37.5,64.951996 L 4.2233776,4.271312 Z"/>
+    <path id="main" fill="#555555" fill-opacity="1" stroke="none" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"
+       d="M 3.859077,3.640412 H 103.85918 l -8.75,15.1553 H 70.109281 l -16.2501,28.146096 h -7.500003 l 7.500003,12.9904 20.0001,-34.641296 h 17.4999 l -37.5,64.951996 L 4.223377,4.271312 Z"/>
+    <path id="secondarytop" fill="#999999" fill-opacity="1" stroke="none" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"
+       d="m 86.359181,3.640412 -8.7499,15.1553 h 17.4999 l 8.749999,-15.1553 z"/>
+    <path id="secondarybottom" fill="#999999" fill-opacity="1" stroke="none" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1"
+          d="m 53.859181,59.932208 -7.500003,-12.9904 -8.75,15.1553 16.250003,28.1458 37.5,-64.951996 h -17.4999 z"/>
+  </g>
+</svg>

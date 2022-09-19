@@ -1,8 +1,3 @@
-let games_url = "https://api.dev.vauhtijuoksu.fi/gamedata"
-let info_url = "https://api.dev.vauhtijuoksu.fi/stream-metadata";
-let gonator_url = "https://api.dev.vauhtijuoksu.fi/donations";
-
-
 let games = null;
 let current = 0;
 let goal = null;
@@ -15,7 +10,13 @@ let activityRotationTimeout = null;
 let idletexts = [""]
 let current_idletext = 0
 
-const ACTIVITY_TIMER = 15000;
+
+const consoles = {
+    "none": "??",
+    "PC": "PC",
+    "NES": "NES",
+    "SNES": "SNES"
+}
 
 function getGames() {
     let xhr = new XMLHttpRequest();
@@ -144,7 +145,7 @@ function updateDonations(gonations) {
  * Updates the donation bar with the currently donated amount and the current goal 
  */
 function updateDonationbar(newSum) {
-    if (goal == null) {
+    if (goal == null || !settings["charity"]) {
         return;
     }
 
@@ -385,8 +386,13 @@ function updateInfo(info) {
     updateField("estimate", estimatestring, formatEstimate);
     updateImage("char", game.img_filename, "img/char/");
     updateImage("console", game.device + ".png", "img/consoles/");
+    updateField("console_name", consoles[game.device]);
     updateField("release", game.published);
-    updateSchedule("setupschedule", current, 4, 0);
+    let count = 4
+    if (!settings["charity"]){
+        count = 7
+    }
+    updateSchedule("setupschedule", current, count, 0);
     updateSchedule("schedule", current, 4, 1);
     updateDeath(1, info.counters[0]);
     updateDeath(2, info.counters[1]);
@@ -405,7 +411,19 @@ function docReady(fn) {
 }
 docReady(function() {
     make_timer()
+    if (!settings["charity"]){
+        setInterval(irltime, 1000)
+
+    }
 });
+
+function irltime(){
+    let today = new Date();
+    let time = today.getHours() + ":" + ("00" + today.getMinutes()).slice(-2)
+    let day = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear().toString().slice(-2);
+    updateField("sum", time);
+    updateField("goal", day);
+}
 
 let timer_start = null   // Date.now()
 let timer_end = null
@@ -423,6 +441,7 @@ function make_timer(){
         setInterval(update_time, 10)
     }
 }
+
 
 function update_time(){
     let time_now = 0
