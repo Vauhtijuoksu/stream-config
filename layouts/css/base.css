@@ -6,14 +6,41 @@
     font-family: 'Alagard';
     src:  url('./Alagardplus.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'ubuntu';
+    src:  url('./UbuntuTitling-Bold.ttf') format('truetype');
+}
+
+/* colors */
+
+body {
+    color: #ffffff;
+}
+.highlight {
+    color: #ffffff;
+}
+div {
+    border: #000000 0px solid;
+}
+.color1 {
+    background-color: #000000;
+}
+.color2 {
+    background-color: #000000;
+}
+.color3 {
+    background-color: #000000;
+}
+.color4 {
+    background-color: #000000;
+}
 
 
 html, body {
     background-color: transparent;
     margin: 0;
     padding: 0;
-    font-family: 'MisterPixel';
-    color: #a3cdd6;
+    font-family: 'ubuntu';
     text-align: center;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
@@ -39,6 +66,15 @@ div {
     font-size: 16pt;
     font-weight: bold;
     vertical-align: middle;
+}
+.vauhtisteksti{
+    font-size: 46px;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
+}
+
+.bonusteksti{
+    font-size: 46px;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
 }
 .textlogo{
     margin: auto;
@@ -69,18 +105,21 @@ div {
     top: 0;
     display: flex;
     flex-direction: column;
-    border-right: #18191f 0px solid;
+    border-right-width: 1px;
 }
 .left-top {
     width: 100%;
     height: 632px;
-    background-image: url('../img/leftbg.png');
     background-position: right -9px;
     background-repeat: repeat-y;
 }
+#right{
+    border-top-width: 1px;
+    border-left-width: 1px;
+}
 #sponsors {
     font-size: 32px;
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
 }
 #carousel {
     display: flex;
@@ -106,7 +145,8 @@ div {
     background-image: url('../img/bottombar.png');
     background-position: left top;
     background-repeat: repeat-x;
-    border-top: #18191f 0px solid;
+    border-top-width: 1px;
+
 }
 .longheader{
     z-index: 1000;
@@ -136,25 +176,26 @@ div {
     right: 0;
     height: 65px;
     display: flex;
-    border-top: #18191f 0px solid;
+    border-top-width: 1px;
     background-image: url('../img/bottomgrass.png');
     background-position: top 0px;
 }
 
-#sum {
+.sum {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 230px;
-    border-right: #18191f 0px solid;
     background-image: url('../img/ruinBG.png');
     background-position: top right;
     background-repeat: repeat-x;
+    border-right-width: 1px;
 }
 
+
 #activity {
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 0 0 5px #18191f, 0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 0 0 5px #b78b64, 0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
     position: absolute;
     height: 65px;
     bottom: 0px;
@@ -250,12 +291,13 @@ div {
 #bar-bar {
     height: 100%;
     width: 0;
+    border-top-width: 1px;
     background-image: url('../img/donatebar.png');
     background-position: top left;
     background-repeat: repeat-x;
 }
 
-#goal {
+.goal {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -264,29 +306,27 @@ div {
     background-image: url('../img/ruinBG.png');
     background-position: top left;
     background-repeat: repeat-x;
-
-    border-left: #18191f 1px solid;
+    border-left-width: 1px;
 }
 
-#vauhtijuoksu {
+#side_event_info {
     width: 100%;
-    top: 0;
+    top: 20px;
+    bottom: 20px;
     left: 0;
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     font-size: 26px;
-    background-image: url('../img/header.png');
-    background-position: right -73px;
-    height: 272px;
 }
-#vauhtijuoksu>div {
+#side_event_info>div {
     margin-top: 10px;
     position: relative;
 }
 #player {
-    border-top: #18191f 0px solid;
-    border-bottom: #18191f 0px solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
     left: 0;
     right: 0;
     height: 96px;
@@ -309,8 +349,16 @@ div {
     background-position: center center;
     background-repeat: no-repeat;
     transform: scale(3);
-    filter: drop-shadow(0px 1px 0px #18191f) drop-shadow(1px 0px 0px #18191f) drop-shadow(0px -1px 0px #18191f) drop-shadow(-1px 0px 0px #18191f)  drop-shadow(0px 1px 0px  #2c2b48) drop-shadow(1px 0px 0px  #2c2b48) drop-shadow(0px -1px 0px  #2c2b48) drop-shadow(-1px 0px 0px  #2c2b48);
+    filter: drop-shadow(0px 1px 0px #b78b64) drop-shadow(1px 0px 0px #b78b64) drop-shadow(0px -1px 0px #b78b64) drop-shadow(-1px 0px 0px #b78b64)  drop-shadow(0px 1px 0px  #2c2b48) drop-shadow(1px 0px 0px  #2c2b48) drop-shadow(0px -1px 0px  #2c2b48) drop-shadow(-1px 0px 0px  #2c2b48);
 
+}
+#simple_clock{
+    position: absolute;
+    top: 26px;
+    left: 20px;
+    }
+#simple_clock>i{
+    font-size: 110px;
 }
 #char{
     position: absolute;
@@ -318,8 +366,16 @@ div {
     background-position: center center;
     background-repeat: no-repeat;
     transform: scale(3);
-    filter: drop-shadow(0px 1px 0px #18191f) drop-shadow(1px 0px 0px #18191f) drop-shadow(0px -1px 0px #18191f) drop-shadow(-1px 0px 0px #18191f)  drop-shadow(0px 1px 0px  #2c2b48) drop-shadow(1px 0px 0px  #2c2b48) drop-shadow(0px -1px 0px  #2c2b48) drop-shadow(-1px 0px 0px  #2c2b48);
-
+    filter: drop-shadow(0px 1px 0px #b78b64) drop-shadow(1px 0px 0px #b78b64) drop-shadow(0px -1px 0px #b78b64) drop-shadow(-1px 0px 0px #b78b64)  drop-shadow(0px 1px 0px  #2c2b48) drop-shadow(1px 0px 0px  #2c2b48) drop-shadow(0px -1px 0px  #2c2b48) drop-shadow(-1px 0px 0px  #2c2b48);
+}
+#simple_game{
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    transform: rotate(-30deg);
+    }
+#simple_game>i{
+    font-size: 110px;
 }
 #console{
     position: absolute;
@@ -328,7 +384,7 @@ div {
     background-repeat: no-repeat;
     transform: scale(3);
     height: 130px;
-    filter: drop-shadow(0px 1px 0px #18191f) drop-shadow(1px 0px 0px #18191f) drop-shadow(0px -1px 0px #18191f) drop-shadow(-1px 0px 0px #18191f)  drop-shadow(0px 1px 0px  #2c2b48) drop-shadow(1px 0px 0px  #2c2b48) drop-shadow(0px -1px 0px  #2c2b48) drop-shadow(-1px 0px 0px  #2c2b48);
+    filter: drop-shadow(0px 1px 0px #b78b64) drop-shadow(1px 0px 0px #b78b64) drop-shadow(0px -1px 0px #b78b64) drop-shadow(-1px 0px 0px #b78b64)  drop-shadow(0px 1px 0px  #2c2b48) drop-shadow(1px 0px 0px  #2c2b48) drop-shadow(0px -1px 0px  #2c2b48) drop-shadow(-1px 0px 0px  #2c2b48);
 
 }
 #deathcounter1 .skull{
@@ -347,8 +403,30 @@ div {
     position: absolute;
     background-position: center center;
 }
+.simple_skull{
+    position: absolute;
+    width: 100%;
+    top: 19px
+    }
+.simple_skull>i{
+    font-size: 80px;
+
+}
+#deathcounter1 .simple_skull>i{
+    color: #8eb0ff;
+}
+#deathcounter2 .simple_skull>i{
+    color: #ff8989;
+}
+#deathcounter3 .simple_skull>i{
+    color: #ffff8e;
+}
+#deathcounter4 .simple_skull>i{
+    color: #89ff89;
+}
+
 #time{
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
     z-index: 100;
 }
 #estimate {
@@ -356,7 +434,7 @@ div {
     position: absolute;
 }
 #gameinfo{
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
 }
 #game {
     position: absolute;
@@ -375,8 +453,16 @@ div {
 #category.longname {
     font-size: 28px;
 }
+#console_name {
+    top: 30px;
+    left: 0;
+    right: 0;
+    font-size: 50px;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
+    position: absolute;
+}
 #release {
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
     position: absolute;
 }
 .counter {
@@ -386,22 +472,20 @@ div {
 */
 .deathcounter {
     display: none;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
 }
 .money{
-    font-family: 'Alagard';
     line-height: 76px;
     font-size: 52px;
-    color: #8ac2bb;
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
 }
 #playername  {
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
     position: absolute;
     top: 6px;
     left: 0;
     right: 0;
     bottom: 0;
-    font-family: 'Alagard';
     font-size: 56px;
     line-height: 80px;
 }
@@ -558,13 +642,12 @@ div {
     padding-right: 13px;
     box-sizing: border-box;
     margin-bottom: -50px;
-    border: 1px solid #22746b;
     border-radius: 3px;
     line-height: 34px;
 }
 
 #timer{
-    text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
     position: absolute;
     top: 15px;
     right: 40px;
@@ -612,4 +695,5 @@ div {
 .w-flashing {
     background-image: url('../img/flashing.png');
 }
+
 

@@ -6,6 +6,14 @@
 .left-top {
     height: 660px;
 }
+#side_event_info{
+    top:5px;
+    height: 380px;
+}
+.vauhtissvg {
+    width: 280px;
+}
+
 #sponsors {
     padding-top: 20px;
     top: 155px;
@@ -91,8 +99,23 @@
     height: 104px;
 }
 #estimate{
-    bottom: 10px;
-    left: 140px;
+    bottom: 20px;
+    right: 40px;
+}
+#simple_clock{
+    top: 12px;
+    }
+#simple_clock>i{
+    font-size: 100px;
+}
+
+
+.simple_skull{
+    top: 5px
+    }
+.simple_skull>i{
+    font-size: 60px;
+
 }
 #game{
     text-align: left;

@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/setuptime.css">
+    <script src="js/config.js"></script>
     <script src="js/data.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/incentives.js"></script>
@@ -11,39 +12,42 @@
 <div id="canvas">
 
     <div class="longheader">
-        <div id="vauhtijuoksu">
-                <img class="textlogo" src="img/textlogoline.png">
-
+        <div id="side_event_info">
+            <div class="titles">
+                <div class="vauhtisteksti">Vauhtijuoksu ry</div>
+                <div class="bonusteksti">Vauhtiväylä</div>
+            </div>
+            <div><object class="vauhtislogo vauhtissvg" type="image/svg+xml" data="img/vauhtijuoksulogo.svg"></object></div>
         </div>
     </div>
-    <div class="left">
-        <div class="schedule">
+    <div class="left color1">
+        <div id="scheduleboard" class="schedule">
             <div class="header-txt">Seuraavaksi tulossa:</div>
             <div id="setupschedule"></div>
-            Tapahtuman aikataulu osoitteessa vauhtijuoksu.fi/aikataulu
+            <!--Tapahtuman aikataulu osoitteessa vauhtijuoksu.fi/aikataulu-->
         </div>
-        <div class="incentives">
+        <div id="incentivesboard" class="incentives">
             <div class="header-txt">Kannustimien tilanne:</div>
             <div id="incentives"></div>
             vauhtijuoksu.fi/kannustimet
         </div>
     </div>
-    <div id="sponsors">
-        Yhteistyössä:
-        <div id="carousel">
+    <div id="right" class="color2">
+        <div id="sponsors">
+            Yhteistyössä:
+            <div id="carousel">
+            </div>
         </div>
     </div>
-    <div class="donations">
-
-        <div id="sum" class="money"></div>
+    <div class="donations color3">
+        <div id="sum" class="money color2 sum"></div>
         <div id="activity">
-            <div id="activities" class="activity-slide" data-slidetime="6000"></div>
+            <div id="activities" class="activity-slide current" data-slidetime="16000"></div>
         </div>
         <div id="bar">
-            <div id="bar-bar"></div>
+            <div id="bar-bar" class="color4"></div>
         </div>
-        <div id="goal" class="money"></div>
-
+        <div id="goal" class="money color2 goal"></div>
     </div>
 </div>
 </body>
