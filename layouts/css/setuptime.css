@@ -46,7 +46,7 @@
     width: 961px;
     bottom: 0;
     text-shadow:  0 0 5px #b78b64, 0 0 5px #b78b64, 2px 2px #b78b64;
-    background-image: url('../img/leftbg.png');
+    /*background-image: url('../img/leftbg.png');*/
     background-position: right top;
     background-repeat: repeat-y;
 }
