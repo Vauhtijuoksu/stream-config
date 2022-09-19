@@ -86,7 +86,7 @@ div {
 .cam-bottom{
     position: absolute;
     height: 100%;
-    background-image: url('../img/cambottom.png');
+    /*background-image: url('../img/cambottom.png');*/
     background-position: right bottom;
     background-repeat: repeat-x;
     width: 100%;
@@ -94,7 +94,7 @@ div {
 .cam-top{
     position: absolute;
     height: 100%;
-    background-image: url('../img/camtop.png');
+    /*background-image: url('../img/camtop.png');*/
     background-position: right top;
     background-repeat: repeat-x;
     width: 100%;
@@ -142,7 +142,7 @@ div {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    background-image: url('../img/bottombar.png');
+    /*background-image: url('../img/bottombar.png');*/
     background-position: left top;
     background-repeat: repeat-x;
     border-top-width: 1px;
@@ -177,7 +177,7 @@ div {
     height: 65px;
     display: flex;
     border-top-width: 1px;
-    background-image: url('../img/bottomgrass.png');
+    /*background-image: url('../img/bottomgrass.png');*/
     background-position: top 0px;
 }
 
@@ -187,7 +187,7 @@ div {
     left: 0;
     height: 100%;
     width: 230px;
-    background-image: url('../img/ruinBG.png');
+    /*background-image: url('../img/ruinBG.png');*/
     background-position: top right;
     background-repeat: repeat-x;
     border-right-width: 1px;
@@ -292,7 +292,7 @@ div {
     height: 100%;
     width: 0;
     border-top-width: 1px;
-    background-image: url('../img/donatebar.png');
+    /*background-image: url('../img/donatebar.png');*/
     background-position: top left;
     background-repeat: repeat-x;
 }
@@ -303,7 +303,7 @@ div {
     right: 0;
     height: 100%;
     width: 230px;
-    background-image: url('../img/ruinBG.png');
+    /*background-image: url('../img/ruinBG.png');*/
     background-position: top left;
     background-repeat: repeat-x;
     border-left-width: 1px;
@@ -330,7 +330,7 @@ div {
     left: 0;
     right: 0;
     height: 96px;
-    background-image: url('../img/ruinBG.png');
+    /*background-image: url('../img/ruinBG.png');*/
     background-position: right top;
     background-repeat: repeat;
 }
@@ -339,7 +339,7 @@ div {
     bottom: 0;
     height: 96px;
     width: 32px;
-    background-image: url('../img/ruinBG.png');
+    /*background-image: url('../img/ruinBG.png');*/
     background-position: right -96px;
     background-repeat: repeat;
 }
@@ -496,7 +496,7 @@ div {
 
 
 #divider {
-    background-image: url('../img/ruinBG.png');
+    /*background-image: url('../img/ruinBG.png');*/
     background-position: top right;
     background-repeat: repeat-x;
     right: 944px;
@@ -507,7 +507,7 @@ div {
     height: 160px;
     left: 0;
     right: 0;
-    background-image: url('../img/bottombar.png');
+    /*background-image: url('../img/bottombar.png');*/
     background-position: center -32px;
     background-repeat: repeat;
 }
