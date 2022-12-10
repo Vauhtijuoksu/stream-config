@@ -7,23 +7,23 @@ const ACTIVITY_TIMER = 15000;
 const settings = {
     "sponsors": false,
     "top_text": "Vauhtijuoksu ry",
-    "bonus_text": "Vauhtiväylä",
+    "bonus_text": "Vauhtis Mini",
     "charity": false,
     "simple_icons": true,
 }
 
 const colors = {
-    "text": "#efdbc8",
-    "text_highlight": "#f1e3d8",
-    "icons": "#f1c9a2",
-    "logo_main": "#e32c02",
-    "logo_secondary": "#fd8605",
-    "logo_border": "#28020f",
-    "main": "#a94343",
-    "secondary": "#db6735",
-    "bar_empty": "#bd4e33",
-    "bar_fill": "#d28546",
-    "borders": "#5c2424"
+    "text": "#fcf0fe",
+    "text_highlight": "#e6bdf3",
+    "icons": "#d177e3",
+    "logo_main": "#2f0531",
+    "logo_secondary": "#130016",
+    "logo_border": "#130016",
+    "main": "#31023b",
+    "secondary": "#26012e",
+    "bar_empty": "#31023b",
+    "bar_fill": "#26012e",
+    "borders": "#110012"
 }
 
 function docReady(fn) {
@@ -139,9 +139,13 @@ function set_logo() {
             logo.getElementById("secondarytop").setAttribute("fill", colors["logo_secondary"]);
             logo.getElementById("secondarybottom").setAttribute("fill", colors["logo_secondary"]);
             logo.getElementById("border").setAttribute("stroke", colors["logo_border"]);
+            logoget += 1
+            if (logoget < 10) {
+                setTimeout(set_logo, 100);
+            }
         } else {
             logoget += 1
-            if (logoget < 1000) {
+            if (logoget < 5000) {
                 setTimeout(set_logo, 1);
             }
         }
