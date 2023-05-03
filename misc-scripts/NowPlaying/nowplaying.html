@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOW PLAYING</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'ubuntu';
+        src:  url('UbuntuTitling-Bold.ttf') format('truetype');
+    }
+
+    body {
+        text-align: right;
+        font-family: 'ubuntu';
+        color: #c3e8f0;
+        font-size: 48px;
+        text-shadow:  0 0 5px #18191f, 0 0 5px #18191f, 2px 2px #18191f;
+    }
+    #now-playing{
+        width: 100%;
+    }
+</style>
+<body>
+<div id="now-playing">
+</div>
+<script>
+    let info_url = "https://api.dev.vauhtijuoksu.fi/stream-metadata"
+    textoutput = document.getElementById("now-playing")
+    function getSong() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", info_url);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                var info = JSON.parse(xhr.responseText);
+                if (info.now_playing !== null && info.now_playing !== ""){
+                    textoutput.textContent = "Nyt soi: " + info.now_playing
+                } else {
+                    textoutput.textContent = ""
+                }
+
+                setTimeout(getSong, 1500);
+            }
+        }
+        xhr.send();
+    }
+    getSong()
+</script>
+</body>
+</html>
