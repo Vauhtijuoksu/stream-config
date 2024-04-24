@@ -14,7 +14,11 @@ function getRate() {
         if (xhr.readyState == 4) {
             var info = JSON.parse(xhr.responseText);
             rate = info.heart_rates[sensor-1]
-            ratetxt.textContent = rate
+            if (rate > 30){
+                ratetxt.textContent = rate
+            } else {
+                ratetxt.textContent = ""
+            }
             setTimeout(getRate, 1000);
         }
     }
