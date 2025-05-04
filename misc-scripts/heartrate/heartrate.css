@@ -6,12 +6,17 @@
     font-family: 'solway';
     src:  url('Solway-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'jaini';
+    src:  url('Jaini-Regular.ttf') format('truetype');
+}
+
 
 html, body {
     background-color: transparent;
     margin: 0;
     padding: 0;
-    font-family: 'solway';
+    font-family: 'jaini';
     color: #ebebdc;
     text-align: center;
 }
@@ -33,7 +38,7 @@ div {
     height: 180px;
     line-height: 180px;
     width: 200px;
-    text-shadow: 0 0 5px #382218, 0 0 5px #382218, 0 0 5px #382218, 0 0 5px #382218, 0 0 5px #382218, 0 0 5px #382218 !important;
+    text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000 !important;
     font-size: 80px;
 }
 .container{
